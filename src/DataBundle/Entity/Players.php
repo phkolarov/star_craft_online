@@ -96,6 +96,182 @@ class Players
     private $planet;
 
     /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
+     * @param string $password
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param string $email
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAvatarUri()
+    {
+        return $this->avatarUri;
+    }
+
+    /**
+     * @param string $avatarUri
+     */
+    public function setAvatarUri($avatarUri)
+    {
+        $this->avatarUri = $avatarUri;
+    }
+
+    /**
+     * @return int
+     */
+    public function getLevel()
+    {
+        return $this->level;
+    }
+
+    /**
+     * @param int $level
+     */
+    public function setLevel($level)
+    {
+        $this->level = $level;
+    }
+
+    /**
+     * @return int
+     */
+    public function getXp()
+    {
+        return $this->xp;
+    }
+
+    /**
+     * @param int $xp
+     */
+    public function setXp($xp)
+    {
+        $this->xp = $xp;
+    }
+
+    /**
+     * @return \Races
+     */
+    public function getRace()
+    {
+        return $this->race;
+    }
+
+    /**
+     * @param \Races $race
+     */
+    public function setRace($race)
+    {
+        $this->race = $race;
+    }
+
+    /**
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getSender()
+    {
+        return $this->sender;
+    }
+
+    /**
+     * @param \Doctrine\Common\Collections\Collection $sender
+     */
+    public function setSender($sender)
+    {
+        $this->sender = $sender;
+    }
+
+    /**
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPlanet()
+    {
+        return $this->planet;
+    }
+
+    /**
+     * @param \Doctrine\Common\Collections\Collection $planet
+     */
+    public function setPlanet($planet)
+    {
+        $this->planet = $planet;
+    }
+
+    /**
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getResource()
+    {
+        return $this->resource;
+    }
+
+    /**
+     * @param \Doctrine\Common\Collections\Collection $resource
+     */
+    public function setResource($resource)
+    {
+        $this->resource = $resource;
+    }
+
+    /**
      * @var \Doctrine\Common\Collections\Collection
      *
      * @ORM\ManyToMany(targetEntity="Resources", inversedBy="player")

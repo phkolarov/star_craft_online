@@ -2,9 +2,11 @@
 
 namespace AppBundle\Controller;
 
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 class HomeController extends Controller
 {
@@ -17,5 +19,24 @@ class HomeController extends Controller
         return $this->render('default/login.html.twig',[
             'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
         ]);
+    }
+
+
+    /**
+     * @Route("/test", name="bom")
+     */
+    public function testFunc(){
+
+        $players = $this->getDoctrine()->getRepository('DataBundle:Players')->findAll();
+
+
+        foreach ( $players as $player){
+            var_dump($player->getName());
+            break;
+        }
+
+        $responce = new JsonResponse(json_encode(array('pinko'=>1)),200,array('Content-type'=>'application/json'),true);
+
+        return $responce;
     }
 }
