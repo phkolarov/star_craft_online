@@ -100,9 +100,9 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        // homepage
-        if ($pathinfo === '/adasd') {
-            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
+        // map
+        if ($pathinfo === '/gameIndex') {
+            return array (  '_controller' => 'AppBundle\\Controller\\GameController::indexAction',  '_route' => 'map',);
         }
 
         // home
@@ -119,9 +119,17 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'AppBundle\\Controller\\HomeController::testFunc',  '_route' => 'bom',);
         }
 
-        // login
-        if ($pathinfo === '/login') {
-            return array (  '_controller' => 'AppBundle\\Controller\\SecurityController::loginAction',  '_route' => 'login',);
+        if (0 === strpos($pathinfo, '/login')) {
+            // login
+            if ($pathinfo === '/login') {
+                return array (  '_controller' => 'AppBundle\\Controller\\SecurityController::loginAction',  '_route' => 'login',);
+            }
+
+            // homepage
+            if ($pathinfo === '/login') {
+                return array (  '_controller' => 'AppBundle\\Controller\\UserController::indexAction',  '_route' => 'homepage',);
+            }
+
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
