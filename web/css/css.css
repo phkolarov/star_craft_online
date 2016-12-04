@@ -28,8 +28,8 @@
 }
 
 .loginmodal-container input[type=text], input[type=password] {
-    height: 44px;
-    font-size: 16px;
+    /*height: 44px;*/
+    /*font-size: 16px;*/
     width: 100%;
     margin-bottom: 10px;
     -webkit-appearance: none;
@@ -192,8 +192,10 @@ body{
     color: #f22907;
 }
 .control-label{
+    text-align: left !important;
     color: white;
 }
+
 .form-horizontal .control-label{
     text-align: left;
 }
