@@ -43,6 +43,13 @@ class Galaxies
         return $this->id;
     }
 
+    /**
+     * @param int $id
+     */
+    public function setId(int $id)
+    {
+        $this->id = $id;
+    }
 
     /**
      * @return string
@@ -75,6 +82,7 @@ class Galaxies
     {
         $this->guidid = $guidid;
     }
+
 
 
 }

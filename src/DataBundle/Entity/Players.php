@@ -13,6 +13,8 @@ use Symfony\Component\Security\Core\User\UserInterface;
  */
 class Players implements UserInterface
 {
+
+
     /**
      * @var integer
      *
@@ -25,9 +27,9 @@ class Players implements UserInterface
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=255, nullable=false)
+     * @ORM\Column(name="username", type="string", length=255, nullable=false)
      */
-    private $name;
+    private $username;
 
     /**
      * @var string
@@ -92,13 +94,6 @@ class Players implements UserInterface
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\ManyToMany(targetEntity="Planets", mappedBy="player")
-     */
-    private $planet;
-
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
      * @ORM\ManyToMany(targetEntity="Resources", inversedBy="player")
      * @ORM\JoinTable(name="player_resouces",
      *   joinColumns={
@@ -117,76 +112,7 @@ class Players implements UserInterface
     public function __construct()
     {
         $this->sender = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->planet = new \Doctrine\Common\Collections\ArrayCollection();
         $this->resource = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-
-    /**
-     * Returns the roles granted to the user.
-     *
-     * <code>
-     * public function getRoles()
-     * {
-     *     return array('ROLE_USER');
-     * }
-     * </code>
-     *
-     * Alternatively, the roles might be stored on a ``roles`` property,
-     * and populated in any number of different ways when the user object
-     * is created.
-     *
-     * @return (Role|string)[] The user roles
-     */
-    public function getRoles()
-    {
-        return [];
-    }
-
-    /**
-     * Returns the password used to authenticate the user.
-     *
-     * This should be the encoded password. On authentication, a plain-text
-     * password will be salted, encoded, and then compared to this value.
-     *
-     * @return string The password
-     */
-    public function getPassword()
-    {
-      return $this->password;
-    }
-
-    /**
-     * Returns the salt that was originally used to encode the password.
-     *
-     * This can return null if the password was not encoded using a salt.
-     *
-     * @return string|null The salt
-     */
-    public function getSalt()
-    {
-        // TODO: Implement getSalt() method.
-    }
-
-    /**
-     * Returns the username used to authenticate the user.
-     *
-     * @return string The username
-     */
-    public function getUsername()
-    {
-        return $this->name;
-    }
-
-    /**
-     * Removes sensitive data from the user.
-     *
-     * This is important if, at any given point, sensitive information like
-     * the plain-text password is stored on this object.
-     */
-    public function eraseCredentials()
-    {
-        // TODO: Implement eraseCredentials() method.
     }
 
     /**
@@ -208,17 +134,33 @@ class Players implements UserInterface
     /**
      * @return string
      */
-    public function getName(): string
+    public function getUsername(): string
     {
-        return $this->name;
+        return $this->email;
     }
 
     /**
-     * @param string $name
+     * @param string $username
      */
-    public function setName(string $name)
+    public function setUsername(string $username)
     {
-        $this->name = $name;
+        $this->username = $username;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPassword(): string
+    {
+        return $this->password;
+    }
+
+    /**
+     * @param string $password
+     */
+    public function setPassword(string $password)
+    {
+        $this->password = $password;
     }
 
     /**
@@ -286,7 +228,7 @@ class Players implements UserInterface
     }
 
     /**
-     * @return \Races
+     * @return Races
      */
     public function getRace(): Races
     {
@@ -294,7 +236,7 @@ class Players implements UserInterface
     }
 
     /**
-     * @param \Races $race
+     * @param Races $race
      */
     public function setRace(Races $race)
     {
@@ -302,14 +244,12 @@ class Players implements UserInterface
     }
 
     /**
-     * @param string $password
+     * @return \Doctrine\Common\Collections\Collection
      */
-    public function setPassword(string $password)
+    public function getSender(): \Doctrine\Common\Collections\Collection
     {
-        $this->password = $password;
+        return $this->sender;
     }
-
-
 
     /**
      * @param \Doctrine\Common\Collections\Collection $sender
@@ -320,11 +260,11 @@ class Players implements UserInterface
     }
 
     /**
-     * @param \Doctrine\Common\Collections\Collection $planet
+     * @return \Doctrine\Common\Collections\Collection
      */
-    public function setPlanet(\Doctrine\Common\Collections\Collection $planet)
+    public function getResource(): \Doctrine\Common\Collections\Collection
     {
-        $this->planet = $planet;
+        return $this->resource;
     }
 
     /**
@@ -334,6 +274,22 @@ class Players implements UserInterface
     {
         $this->resource = $resource;
     }
+
+    public function getRoles()
+    {
+        return [];
+    }
+
+    public function getSalt()
+    {
+        // TODO: Implement getSalt() method.
+    }
+
+    public function eraseCredentials()
+    {
+        // TODO: Implement eraseCredentials() method.
+    }
+
 
 }
 

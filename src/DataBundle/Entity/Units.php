@@ -64,5 +64,102 @@ class Units
         $this->army = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId(int $id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName(string $name)
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return string
+     */
+    public function getImageUri(): string
+    {
+        return $this->imageUri;
+    }
+
+    /**
+     * @param string $imageUri
+     */
+    public function setImageUri(string $imageUri)
+    {
+        $this->imageUri = $imageUri;
+    }
+
+    /**
+     * @return float
+     */
+    public function getAttack(): float
+    {
+        return $this->attack;
+    }
+
+    /**
+     * @param float $attack
+     */
+    public function setAttack(float $attack)
+    {
+        $this->attack = $attack;
+    }
+
+    /**
+     * @return float
+     */
+    public function getDefence(): float
+    {
+        return $this->defence;
+    }
+
+    /**
+     * @param float $defence
+     */
+    public function setDefence(float $defence)
+    {
+        $this->defence = $defence;
+    }
+
+    /**
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getArmy(): \Doctrine\Common\Collections\Collection
+    {
+        return $this->army;
+    }
+
+    /**
+     * @param \Doctrine\Common\Collections\Collection $army
+     */
+    public function setArmy(\Doctrine\Common\Collections\Collection $army)
+    {
+        $this->army = $army;
+    }
+
+
 }
 

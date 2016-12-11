@@ -42,9 +42,25 @@ class GalaxiesPlanets
     private $planetid;
 
     /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId(int $id)
+    {
+        $this->id = $id;
+    }
+
+    /**
      * @return \Galaxies
      */
-    public function getGalaxyid(): \Galaxies
+    public function getGalaxyid(): Galaxies
     {
         return $this->galaxyid;
     }
@@ -52,7 +68,7 @@ class GalaxiesPlanets
     /**
      * @param \Galaxies $galaxyid
      */
-    public function setGalaxyid(\Galaxies $galaxyid)
+    public function setGalaxyid(Galaxies $galaxyid)
     {
         $this->galaxyid = $galaxyid;
     }
@@ -60,7 +76,7 @@ class GalaxiesPlanets
     /**
      * @return \Planets
      */
-    public function getPlanetid(): \Planets
+    public function getPlanetid(): Players
     {
         return $this->planetid;
     }
@@ -68,7 +84,7 @@ class GalaxiesPlanets
     /**
      * @param \Planets $planetid
      */
-    public function setPlanetid(\Planets $planetid)
+    public function setPlanetid(Planets $planetid)
     {
         $this->planetid = $planetid;
     }

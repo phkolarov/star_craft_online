@@ -16,24 +16,24 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-collapse-4">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><div class="menu-planet"></div>Планета </a></li>
-                    <li><a href="#"><div class="menu-flights"></div>Полети</a></li>
-                    <li><a href="#"><div class="menu-galactic"></div>Галактика</a></li>
-                    <li><a href="#"><div class="menu-aliance"></div>Съюз</a></li>
-                    <li><a href="#"><div class="menu-private"></div>Лични</a></li>
+                    <li><a href=""><div class="menu-galactic"></div>Галактика</a></li>
+                    <li><a href=""><div class="menu-planet"></div>Планета </a></li>
+                    <li><a href=""><div class="menu-flights"></div>Полети</a></li>
+                    <li><a href=""><div class="menu-aliance"></div>Съюз</a></li>
+                    <li><a href=""><div class="menu-private"></div>Лични</a></li>
                     <li>
-                        <a class="btn btn-default btn-outline btn-circle collapsed"  data-toggle="collapse" href="#nav-collapse4" aria-expanded="false" aria-controls="nav-collapse4">
+                        <a class="btn btn-default btn-outline btn-circle collapsed"  data-toggle="collapse" href="#nav-collapse4" aria-expanded="true" aria-controls="nav-collapse4">
                             <div class="menu-profile"></div>
                             Profile <i class=""></i> </a>
                     </li>
                     <ul class="collapse nav navbar-nav nav-collapse slide-down" role="search" id="nav-collapse4" style="margin-top: 101px; ">
                         <li class="dropdown" style="float: right; position: absolute; right: 0px; z-index: 10;width: 269px;">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"  style="background-color: black ">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true"  style="background-color: black ">
                                 <p>РАСА: </p>
                                 <h4>{{ app.user.race.name}} МАйкА!</h4>
-                                <img class="img-circle" src="css/images/races/{{ app.user.race.imageUri }}" alt="maridlcrmn" width="150"/>
+                                <img class="img-circle" src="css/images/races/{{ app.user.race.imageUri }}.jpg" alt="maridlcrmn" width="150"/>
 
-                                {{ app.user.name}} <span class="caret"></span></a>
+                                {{ app.user.username}} <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="#">Профил</a></li>
                                 <li><a href="#">Настройки</a></li>

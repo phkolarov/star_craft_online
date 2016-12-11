@@ -24,9 +24,15 @@ class GameController extends Controller
     public function indexAction(Request $request)
     {
 
-        // replace this example code with whatever you need
-        return $this->render('pages/game.html.twig'
-        );
+        $em = $this->getDoctrine()->getManager();
+        $user = $this->get('security.token_storage')->getToken()->getUser();
+        $planetCount = count($em->getRepository('DataBundle:PlanetPlayers')->findBy(['player' => $user->getId()]));
+        $unitsCount =  count($em->getRepository('DataBundle:PlayerUnits')->findBy(['playerid'=>  $user->getId()]));
+
+        return $this->render('pages/game.html.twig', [
+            'planetCount' => $planetCount,
+            'unitsCount'=> $unitsCount
+        ]);
 
     }
 

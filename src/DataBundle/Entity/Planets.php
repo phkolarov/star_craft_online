@@ -81,26 +81,19 @@ class Planets
     private $type;
 
     /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
-     * @ORM\ManyToMany(targetEntity="Players", inversedBy="planet")
-     * @ORM\JoinTable(name="planet_players",
-     *   joinColumns={
-     *     @ORM\JoinColumn(name="planet_id", referencedColumnName="id")
-     *   },
-     *   inverseJoinColumns={
-     *     @ORM\JoinColumn(name="player_id", referencedColumnName="id")
-     *   }
-     * )
+     * @return int
      */
-    private $player;
+    public function getId(): int
+    {
+        return $this->id;
+    }
 
     /**
-     * Constructor
+     * @param int $id
      */
-    public function __construct()
+    public function setId(int $id)
     {
-        $this->player = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->id = $id;
     }
 
     /**
@@ -218,7 +211,7 @@ class Planets
     /**
      * @return \PlanetTypes
      */
-    public function getType(): \PlanetTypes
+    public function getType(): PlanetTypes
     {
         return $this->type;
     }
@@ -226,25 +219,9 @@ class Planets
     /**
      * @param \PlanetTypes $type
      */
-    public function setType(\PlanetTypes $type)
+    public function setType(PlanetTypes $type)
     {
         $this->type = $type;
-    }
-
-    /**
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getPlayer(): \Doctrine\Common\Collections\Collection
-    {
-        return $this->player;
-    }
-
-    /**
-     * @param \Doctrine\Common\Collections\Collection $player
-     */
-    public function setPlayer(\Doctrine\Common\Collections\Collection $player)
-    {
-        $this->player = $player;
     }
 
 

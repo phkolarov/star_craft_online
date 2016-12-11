@@ -43,12 +43,10 @@ class UserController extends Controller
 
         $form = $this->createForm(LoginUserType::class);
         $form->handleRequest($request);
+
         if ($form->isValid()) {
 
             $encoder = $this->container->get('security.password_encoder');
-
-            //$encoded = $encoder->encodePassword($user, $plainPassword);
-
             $player = $this->getDoctrine()->getRepository('DataBundle:Players')->find(1);
 
             var_dump($encoder);
@@ -79,7 +77,7 @@ class UserController extends Controller
             $newPlayer = new Players();
 
             $newPlayer->setPassword($userData->getPassword());
-            $newPlayer->setName($userData->getName());
+            $newPlayer->setUsername($userData->getName());
             $newPlayer->setEmail($userData->getEmail());
             $newPlayer->setRace($race);
 
