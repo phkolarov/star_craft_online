@@ -173,4 +173,136 @@ class Races extends \DataBundle\Entity\Races implements \Doctrine\ORM\Proxy\Prox
     }
 
     
+    /**
+     * {@inheritDoc}
+     */
+    public function getId(): int
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getId', []);
+
+        return parent::getId();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setId(int $id)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setId', [$id]);
+
+        return parent::setId($id);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getName(): string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getName', []);
+
+        return parent::getName();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setName(string $name)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setName', [$name]);
+
+        return parent::setName($name);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getImageUri(): string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getImageUri', []);
+
+        return parent::getImageUri();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setImageUri(string $imageUri)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setImageUri', [$imageUri]);
+
+        return parent::setImageUri($imageUri);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getAttackBonus(): float
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getAttackBonus', []);
+
+        return parent::getAttackBonus();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setAttackBonus(float $attackBonus)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setAttackBonus', [$attackBonus]);
+
+        return parent::setAttackBonus($attackBonus);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getDefenceBonus(): float
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDefenceBonus', []);
+
+        return parent::getDefenceBonus();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setDefenceBonus(float $defenceBonus)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setDefenceBonus', [$defenceBonus]);
+
+        return parent::setDefenceBonus($defenceBonus);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getResourceBonus(): float
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getResourceBonus', []);
+
+        return parent::getResourceBonus();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setResourceBonus(float $resourceBonus)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setResourceBonus', [$resourceBonus]);
+
+        return parent::setResourceBonus($resourceBonus);
+    }
+
 }

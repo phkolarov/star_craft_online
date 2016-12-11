@@ -3,6 +3,8 @@
 namespace AppBundle\Form;
 
 use AppBundle\DTO\RegisterUserBindingModel;
+use DataBundle\Entity\Players;
+use DataBundle\Entity\Test;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -19,24 +21,25 @@ class RegisterUserType extends AbstractType
         $builder->add('email', EmailType::class, [
             'attr' => ['class' => 'form-control', 'placeholder' => 'Email']
         ]);
-        $builder->add('username', TextType::class, [
+        $builder->add('name', TextType::class, [
             'attr' => ['class' => 'form-control', 'placeholder' => 'Потребителско име']
         ]);
-        $builder->add('race', ChoiceType::class, [
-            'choices' => array('Избери раса'=>'','ТЕРАН' => 1, 'ПРОТОС' => 2 , 'ЗЕРГ'=> 3),
+        $builder->add('raceId', ChoiceType::class, [
+            'choices' => array( 'ТЕРАН' => 1, 'ПРОТОС' => 2 , 'ЗЕРГ'=> 3),
             'attr' => ['class' => 'form-control', 'placeholder' => 'Раса']
         ]);
 
 
         $builder->add('password', RepeatedType::class, array(
             'type' => PasswordType::class,
-            'invalid_message' => 'Паролите не съвпадат.',
-            'options' => array('attr' => array('class' => 'password-field form-control')),
+            'options' => array('attr' => array('class' => 'password-field form-control','placeholder' =>'Парола')),
             'required' => true,
-            'first_options'  => array('label' => 'Парола', 'label_attr'=> [ 'class' => 'control-label']),
+            'first_options'  => array('label' => 'Парола', 'label_attr'=> [ 'class' => 'control-label'], 'invalid_message' => 'Паролите не съвпадат.'),
             'second_options' => array('label' => 'Повтори парола','label_attr'=> [ 'class' => 'control-label']),
+            'invalid_message' => 'Паролите не съвпадат.'
         ));
         $builder->setMethod('POST');
+        $builder->setAction('register');
     }
 
     public function configureOptions(OptionsResolver $resolver)

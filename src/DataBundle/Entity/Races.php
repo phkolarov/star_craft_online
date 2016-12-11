@@ -56,6 +56,102 @@ class Races
      */
     private $resourceBonus = '0';
 
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId(int $id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName(string $name)
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return string
+     */
+    public function getImageUri(): string
+    {
+        return $this->imageUri;
+    }
+
+    /**
+     * @param string $imageUri
+     */
+    public function setImageUri(string $imageUri)
+    {
+        $this->imageUri = $imageUri;
+    }
+
+    /**
+     * @return float
+     */
+    public function getAttackBonus(): float
+    {
+        return $this->attackBonus;
+    }
+
+    /**
+     * @param float $attackBonus
+     */
+    public function setAttackBonus(float $attackBonus)
+    {
+        $this->attackBonus = $attackBonus;
+    }
+
+    /**
+     * @return float
+     */
+    public function getDefenceBonus(): float
+    {
+        return $this->defenceBonus;
+    }
+
+    /**
+     * @param float $defenceBonus
+     */
+    public function setDefenceBonus(float $defenceBonus)
+    {
+        $this->defenceBonus = $defenceBonus;
+    }
+
+    /**
+     * @return float
+     */
+    public function getResourceBonus(): float
+    {
+        return $this->resourceBonus;
+    }
+
+    /**
+     * @param float $resourceBonus
+     */
+    public function setResourceBonus(float $resourceBonus)
+    {
+        $this->resourceBonus = $resourceBonus;
+    }
+
 
 }
 

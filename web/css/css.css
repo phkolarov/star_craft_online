@@ -101,65 +101,65 @@ Code snippet by maridlcrmn for Bootsnipp.com
 Follow me on Twitter @maridlcrmn
 */
 
-.navbar-brand { position: relative; z-index: 2; }
+/*.navbar-brand { position: relative; z-index: 2; }*/
 
-.navbar-nav.navbar-right .btn { position: relative; z-index: 2; padding: 4px 20px; margin: 10px auto; transition: transform 0.3s; }
+/*.navbar-nav.navbar-right .btn { position: relative; z-index: 2; padding: 4px 20px; margin: 10px auto; transition: transform 0.3s; }*/
 
-.navbar .navbar-collapse { position: relative; overflow: hidden !important; }
-.navbar .navbar-collapse .navbar-right > li:last-child { padding-left: 22px; }
+/*.navbar .navbar-collapse { position: relative; overflow: hidden !important; }*/
+/*.navbar .navbar-collapse .navbar-right > li:last-child { padding-left: 22px; }*/
 
-.navbar .nav-collapse { position: absolute; z-index: 1; top: 0; left: 0; right: 0; bottom: 0; margin: 0; padding-right: 120px; padding-left: 80px; width: 100%; }
-.navbar.navbar-default .nav-collapse { background-color: #f8f8f8; }
-.navbar.navbar-inverse .nav-collapse { background-color: #222; }
-.navbar .nav-collapse .navbar-form { border-width: 0; box-shadow: none; }
-.nav-collapse>li { float: right; }
+/*.navbar .nav-collapse { position: absolute; z-index: 1; top: 0; left: 0; right: 0; bottom: 0; margin: 0; padding-right: 120px; padding-left: 80px; width: 100%; }*/
+/*.navbar.navbar-default .nav-collapse { background-color: #f8f8f8; }*/
+/*.navbar.navbar-inverse .nav-collapse { background-color: #222; }*/
+/*.navbar .nav-collapse .navbar-form { border-width: 0; box-shadow: none; }*/
+/*.nav-collapse>li { float: right; }*/
 
-.btn.btn-circle { border-radius: 50px; }
-.btn.btn-outline { background-color: transparent; }
+/*.btn.btn-circle { border-radius: 50px; }*/
+/*.btn.btn-outline { background-color: transparent; }*/
 
-.navbar-nav.navbar-right .btn:not(.collapsed) {
-    background-color: rgb(111, 84, 153);
-    border-color: rgb(111, 84, 153);
-    color: rgb(255, 255, 255);
-}
+/*.navbar-nav.navbar-right .btn:not(.collapsed) {*/
+    /*background-color: rgb(111, 84, 153);*/
+    /*border-color: rgb(111, 84, 153);*/
+    /*color: rgb(255, 255, 255);*/
+/*}*/
 
-.navbar.navbar-default .nav-collapse,
-.navbar.navbar-inverse .nav-collapse {
-    height: auto !important;
-    transition: transform 0.3s;
-    transform: translate(0px,-50px);
-}
-.navbar.navbar-default .nav-collapse.in,
-.navbar.navbar-inverse .nav-collapse.in {
-    transform: translate(0px,0px);
-}
+/*.navbar.navbar-default .nav-collapse,*/
+/*.navbar.navbar-inverse .nav-collapse {*/
+    /*height: auto !important;*/
+    /*transition: transform 0.3s;*/
+    /*transform: translate(0px,-50px);*/
+/*}*/
+/*.navbar.navbar-default .nav-collapse.in,*/
+/*.navbar.navbar-inverse .nav-collapse.in {*/
+    /*transform: translate(0px,0px);*/
+/*}*/
 
 
-@media screen and (max-width: 767px) {
-    .navbar .navbar-collapse .navbar-right > li:last-child { padding-left: 15px; padding-right: 15px; }
+/*@media screen and (max-width: 767px) {*/
+    /*.navbar .navbar-collapse .navbar-right > li:last-child { padding-left: 15px; padding-right: 15px; }*/
 
-    .navbar .nav-collapse { margin: 7.5px auto; padding: 0; }
-    .navbar .nav-collapse .navbar-form { margin: 0; }
-    .nav-collapse>li { float: none; }
+    /*.navbar .nav-collapse { margin: 7.5px auto; padding: 0; }*/
+    /*.navbar .nav-collapse .navbar-form { margin: 0; }*/
+    /*.nav-collapse>li { float: none; }*/
 
-    .navbar.navbar-default .nav-collapse,
-    .navbar.navbar-inverse .nav-collapse {
-        transform: translate(-100%,0px);
-    }
-    .navbar.navbar-default .nav-collapse.in,
-    .navbar.navbar-inverse .nav-collapse.in {
-        transform: translate(0px,0px);
-    }
+    /*.navbar.navbar-default .nav-collapse,*/
+    /*.navbar.navbar-inverse .nav-collapse {*/
+        /*transform: translate(-100%,0px);*/
+    /*}*/
+    /*.navbar.navbar-default .nav-collapse.in,*/
+    /*.navbar.navbar-inverse .nav-collapse.in {*/
+        /*transform: translate(0px,0px);*/
+    /*}*/
 
-    .navbar.navbar-default .nav-collapse.slide-down,
-    .navbar.navbar-inverse .nav-collapse.slide-down {
-        transform: translate(0px,-100%);
-    }
-    .navbar.navbar-default .nav-collapse.in.slide-down,
-    .navbar.navbar-inverse .nav-collapse.in.slide-down {
-        transform: translate(0px,0px);
-    }
-}
+    /*.navbar.navbar-default .nav-collapse.slide-down,*/
+    /*.navbar.navbar-inverse .nav-collapse.slide-down {*/
+        /*transform: translate(0px,-100%);*/
+    /*}*/
+    /*.navbar.navbar-default .nav-collapse.in.slide-down,*/
+    /*.navbar.navbar-inverse .nav-collapse.in.slide-down {*/
+        /*transform: translate(0px,0px);*/
+    /*}*/
+/*}*/
 
 body{
     height: 100%;
@@ -177,6 +177,12 @@ body{
 
 #loginPage {
     background: url("images/background.jpg") no-repeat center center;
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
 }
 
 #logo {
@@ -199,3 +205,81 @@ body{
 .form-horizontal .control-label{
     text-align: left;
 }
+.nav.navbar-nav.navbar-right{
+    position: relative;
+}
+.dropdown-menu{
+    min-width: 269px;
+}
+.menu-planet{
+     width: 55px;
+     height: 45px;
+     background: url(images/menu-icons/main-navi.png) -10px -31px no-repeat;
+ }
+.menu-flights{
+    width: 55px;
+    height: 45px;
+    background: url(images/menu-icons/main-navi.png) -90px -24px no-repeat;
+}
+.menu-galactic{
+    width: 55px;
+    height: 45px;
+    background: url(images/menu-icons/main-navi.png) -167px -24px no-repeat;
+}
+.menu-aliance{
+    width: 55px;
+    height: 45px;
+    background: url(images/menu-icons/main-navi.png) -402px -24px no-repeat;
+}
+.menu-private{
+    width: 55px;
+    height: 45px;
+    background: url(images/menu-icons/main-navi.png) -242px -24px no-repeat
+}
+.menu-profile{
+    width: 55px;
+    height: 45px;
+    padding: 0px;
+    margin-bottom: 4px;
+    background: url(images/menu-icons/main-navi.png) -315px -28px no-repeat
+}
+.menu-planet:hover{
+    width: 55px;
+    height: 45px;
+    background: url(images/menu-icons/main-navi.png) -10px -131px no-repeat;
+}
+.menu-flights:hover{
+    width: 55px;
+    height: 45px;
+    background: url(images/menu-icons/main-navi.png) -90px -124px no-repeat;
+}
+.menu-galactic:hover{
+    width: 55px;
+    height: 45px;
+    background: url(images/menu-icons/main-navi.png) -167px -124px no-repeat;
+}
+.menu-aliance:hover{
+    width: 55px;
+    height: 45px;
+    background: url(images/menu-icons/main-navi.png) -402px -124px no-repeat
+}
+.menu-private:hover{
+    width: 55px;
+    height: 45px;
+    background: url(images/menu-icons/main-navi.png) -242px -124px no-repeat
+}
+.menu-profile:hover{
+    width: 55px;
+    height: 45px;
+    background: url(images/menu-icons/main-navi.png) -315px -128px no-repeat
+}
+#leftSideMenu,#gameContent,#rightSideMenu{
+    border: 1px solid white;
+}
+.flash-notice{
+    color: white;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.29);
+}
+
+/*SIDEBAR*/

@@ -3,6 +3,7 @@
 namespace DataBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * Players
@@ -10,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="players", uniqueConstraints={@ORM\UniqueConstraint(name="email", columns={"email"})}, indexes={@ORM\Index(name="FK_players_races", columns={"race_id"})})
  * @ORM\Entity
  */
-class Players
+class Players implements UserInterface
 {
     /**
      * @var integer
@@ -45,7 +46,7 @@ class Players
     /**
      * @var string
      *
-     * @ORM\Column(name="avatar_uri", type="string", length=255, nullable=false)
+     * @ORM\Column(name="avatar_uri", type="string", length=255, nullable=true)
      */
     private $avatarUri;
 
@@ -96,182 +97,6 @@ class Players
     private $planet;
 
     /**
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * @param int $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * @param string $name
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-    }
-
-    /**
-     * @return string
-     */
-    public function getPassword()
-    {
-        return $this->password;
-    }
-
-    /**
-     * @param string $password
-     */
-    public function setPassword($password)
-    {
-        $this->password = $password;
-    }
-
-    /**
-     * @return string
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-    /**
-     * @param string $email
-     */
-    public function setEmail($email)
-    {
-        $this->email = $email;
-    }
-
-    /**
-     * @return string
-     */
-    public function getAvatarUri()
-    {
-        return $this->avatarUri;
-    }
-
-    /**
-     * @param string $avatarUri
-     */
-    public function setAvatarUri($avatarUri)
-    {
-        $this->avatarUri = $avatarUri;
-    }
-
-    /**
-     * @return int
-     */
-    public function getLevel()
-    {
-        return $this->level;
-    }
-
-    /**
-     * @param int $level
-     */
-    public function setLevel($level)
-    {
-        $this->level = $level;
-    }
-
-    /**
-     * @return int
-     */
-    public function getXp()
-    {
-        return $this->xp;
-    }
-
-    /**
-     * @param int $xp
-     */
-    public function setXp($xp)
-    {
-        $this->xp = $xp;
-    }
-
-    /**
-     * @return \Races
-     */
-    public function getRace()
-    {
-        return $this->race;
-    }
-
-    /**
-     * @param \Races $race
-     */
-    public function setRace($race)
-    {
-        $this->race = $race;
-    }
-
-    /**
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getSender()
-    {
-        return $this->sender;
-    }
-
-    /**
-     * @param \Doctrine\Common\Collections\Collection $sender
-     */
-    public function setSender($sender)
-    {
-        $this->sender = $sender;
-    }
-
-    /**
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getPlanet()
-    {
-        return $this->planet;
-    }
-
-    /**
-     * @param \Doctrine\Common\Collections\Collection $planet
-     */
-    public function setPlanet($planet)
-    {
-        $this->planet = $planet;
-    }
-
-    /**
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getResource()
-    {
-        return $this->resource;
-    }
-
-    /**
-     * @param \Doctrine\Common\Collections\Collection $resource
-     */
-    public function setResource($resource)
-    {
-        $this->resource = $resource;
-    }
-
-    /**
      * @var \Doctrine\Common\Collections\Collection
      *
      * @ORM\ManyToMany(targetEntity="Resources", inversedBy="player")
@@ -294,6 +119,220 @@ class Players
         $this->sender = new \Doctrine\Common\Collections\ArrayCollection();
         $this->planet = new \Doctrine\Common\Collections\ArrayCollection();
         $this->resource = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+
+    /**
+     * Returns the roles granted to the user.
+     *
+     * <code>
+     * public function getRoles()
+     * {
+     *     return array('ROLE_USER');
+     * }
+     * </code>
+     *
+     * Alternatively, the roles might be stored on a ``roles`` property,
+     * and populated in any number of different ways when the user object
+     * is created.
+     *
+     * @return (Role|string)[] The user roles
+     */
+    public function getRoles()
+    {
+        return [];
+    }
+
+    /**
+     * Returns the password used to authenticate the user.
+     *
+     * This should be the encoded password. On authentication, a plain-text
+     * password will be salted, encoded, and then compared to this value.
+     *
+     * @return string The password
+     */
+    public function getPassword()
+    {
+      return $this->password;
+    }
+
+    /**
+     * Returns the salt that was originally used to encode the password.
+     *
+     * This can return null if the password was not encoded using a salt.
+     *
+     * @return string|null The salt
+     */
+    public function getSalt()
+    {
+        // TODO: Implement getSalt() method.
+    }
+
+    /**
+     * Returns the username used to authenticate the user.
+     *
+     * @return string The username
+     */
+    public function getUsername()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Removes sensitive data from the user.
+     *
+     * This is important if, at any given point, sensitive information like
+     * the plain-text password is stored on this object.
+     */
+    public function eraseCredentials()
+    {
+        // TODO: Implement eraseCredentials() method.
+    }
+
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId(int $id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName(string $name)
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEmail(): string
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param string $email
+     */
+    public function setEmail(string $email)
+    {
+        $this->email = $email;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAvatarUri(): string
+    {
+        return $this->avatarUri;
+    }
+
+    /**
+     * @param string $avatarUri
+     */
+    public function setAvatarUri(string $avatarUri)
+    {
+        $this->avatarUri = $avatarUri;
+    }
+
+    /**
+     * @return int
+     */
+    public function getLevel(): int
+    {
+        return $this->level;
+    }
+
+    /**
+     * @param int $level
+     */
+    public function setLevel(int $level)
+    {
+        $this->level = $level;
+    }
+
+    /**
+     * @return int
+     */
+    public function getXp(): int
+    {
+        return $this->xp;
+    }
+
+    /**
+     * @param int $xp
+     */
+    public function setXp(int $xp)
+    {
+        $this->xp = $xp;
+    }
+
+    /**
+     * @return \Races
+     */
+    public function getRace(): Races
+    {
+        return $this->race;
+    }
+
+    /**
+     * @param \Races $race
+     */
+    public function setRace(Races $race)
+    {
+        $this->race = $race;
+    }
+
+    /**
+     * @param string $password
+     */
+    public function setPassword(string $password)
+    {
+        $this->password = $password;
+    }
+
+
+
+    /**
+     * @param \Doctrine\Common\Collections\Collection $sender
+     */
+    public function setSender(\Doctrine\Common\Collections\Collection $sender)
+    {
+        $this->sender = $sender;
+    }
+
+    /**
+     * @param \Doctrine\Common\Collections\Collection $planet
+     */
+    public function setPlanet(\Doctrine\Common\Collections\Collection $planet)
+    {
+        $this->planet = $planet;
+    }
+
+    /**
+     * @param \Doctrine\Common\Collections\Collection $resource
+     */
+    public function setResource(\Doctrine\Common\Collections\Collection $resource)
+    {
+        $this->resource = $resource;
     }
 
 }

@@ -12,12 +12,14 @@ use AppBundle\Form\LoginUserType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 class GameController extends Controller
 {
 
     /**
-     * @Route("/gameIndex", name="map")
+     * @Security("is_granted('IS_AUTHENTICATED_FULLY')")
+     * @Route("/game/index", name="gameindex")
      */
     public function indexAction(Request $request)
     {

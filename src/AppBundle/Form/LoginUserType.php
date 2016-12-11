@@ -15,22 +15,22 @@ class LoginUserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
 
+        $builder->setAction('security_login');
         $builder->add('username',TextType::class,[
-            'label' => 'Username',
+            'label' => 'username',
             'attr' =>['class'=>'form-control', 'placeholder' => 'Потребителско име']
         ]);
 
         $builder->add('password',PasswordType::class,[
-            'label' => 'Password',
+            'label' => 'password',
             'attr' =>['class'=>'form-control','placeholder' => 'Парола']
         ]);
         $builder->setMethod('POST');
-
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(['data_class'=> LoginUserBindingModel::class]);
+        $resolver->setDefaults(['data_class'=> 'DataBundle\Entity\Players']);
     }
 
     public function getName()

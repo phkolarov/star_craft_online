@@ -1,3 +1,3 @@
-/**
- * Created by mst on 17-Nov-16.
- */
+(()=> {
+    sc.run.start();
+})();

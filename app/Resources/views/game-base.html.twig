@@ -2,11 +2,14 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>{% block title %}Welcome!{% endblock %}</title>
+    <title>{% block title %}Star Craft Online!{% endblock %}</title>
+    <base href="http://127.0.0.1:8080/star_craft_online/web/">
+
     {% block stylesheets %}{% endblock %}
+
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    <link href="css/css.css" type="text/css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="css/css.css" type="text/css" rel="stylesheet">
     <script
             src="https://code.jquery.com/jquery-3.1.1.min.js"
             integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
@@ -19,7 +22,14 @@
 
     {{ include('partials/main-menu.html.twig') }}
     {% block body %}{% endblock %}
-    {% block javascripts %}{% endblock %}
+
+    <script src={{asset('js/sc/helpers.js')}}></script>
+    <script src={{asset('js/sc/loader.js')}}></script>
+    <script src={{asset('js/sc.js')}}></script>
+    <script src={{asset('js/script.js')}}></script>
+
+    {% block javascripts %}
+    {% endblock %}
 </div>
 </body>
 </html>

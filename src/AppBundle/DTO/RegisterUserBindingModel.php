@@ -11,7 +11,7 @@ namespace AppBundle\DTO;
 
 class RegisterUserBindingModel
 {
-    private $username;
+    private $name;
     private $password;
     private $email;
     private $dateTime;
@@ -21,17 +21,17 @@ class RegisterUserBindingModel
     /**
      * @return mixed
      */
-    public function getUsername()
+    public function getName()
     {
-        return $this->username;
+        return $this->name;
     }
 
     /**
      * @param mixed $username
      */
-    public function setUsername($username)
+    public function setName($name)
     {
-        $this->username = $username;
+        $this->name = $name;
     }
 
     /**
