@@ -106,9 +106,32 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return array (  '_controller' => 'AppBundle\\Controller\\DataGeneratorController::index',  '_route' => 'generator',);
             }
 
-            // gameindex
-            if ($pathinfo === '/game/index') {
-                return array (  '_controller' => 'AppBundle\\Controller\\GameController::indexAction',  '_route' => 'gameindex',);
+            if (0 === strpos($pathinfo, '/game')) {
+                // gameindex
+                if ($pathinfo === '/game/index') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\GameController::indexAction',  '_route' => 'gameindex',);
+                }
+
+                // galaxies
+                if ($pathinfo === '/game/galaxies') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\GameController::galaxies',  '_route' => 'galaxies',);
+                }
+
+                // mygalaxies
+                if ($pathinfo === '/game/mygalaxies') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\GameController::playerGalaxies',  '_route' => 'mygalaxies',);
+                }
+
+                // galaxy
+                if (0 === strpos($pathinfo, '/game/galaxy') && preg_match('#^/game/galaxy/(?P<id>[^/]++)/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'galaxy')), array (  '_controller' => 'AppBundle\\Controller\\GameController::galaxy',));
+                }
+
+                // testPagination
+                if ($pathinfo === '/game/pagination') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\GameController::testPaginator',  '_route' => 'testPagination',);
+                }
+
             }
 
         }

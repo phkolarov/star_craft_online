@@ -17,6 +17,7 @@
       <parameter key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</parameter>
       <parameter key="DataBundle">DataBundle\DataBundle</parameter>
       <parameter key="AppBundle">AppBundle\AppBundle</parameter>
+      <parameter key="KnpPaginatorBundle">Knp\Bundle\PaginatorBundle\KnpPaginatorBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -303,6 +304,12 @@
     <parameter key="sensio_framework_extra.converter.doctrine.class">Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DoctrineParamConverter</parameter>
     <parameter key="sensio_framework_extra.converter.datetime.class">Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DateTimeParamConverter</parameter>
     <parameter key="sensio_framework_extra.view.listener.class">Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener</parameter>
+    <parameter key="knp_paginator.class">Knp\Component\Pager\Paginator</parameter>
+    <parameter key="knp_paginator.helper.processor.class">Knp\Bundle\PaginatorBundle\Helper\Processor</parameter>
+    <parameter key="knp_paginator.template.pagination">KnpPaginatorBundle:Pagination:sliding.html.twig</parameter>
+    <parameter key="knp_paginator.template.filtration">KnpPaginatorBundle:Pagination:filtration.html.twig</parameter>
+    <parameter key="knp_paginator.template.sortable">KnpPaginatorBundle:Pagination:sortable_link.html.twig</parameter>
+    <parameter key="knp_paginator.page_range">5</parameter>
     <parameter key="web_profiler.debug_toolbar.position">bottom</parameter>
     <parameter key="web_profiler.debug_toolbar.intercept_redirects">false</parameter>
     <parameter key="web_profiler.debug_toolbar.mode">2</parameter>
@@ -488,7 +495,7 @@
                   <tag name="cache.pool"/>
                   <argument>gbequfB13j</argument>
                   <argument>0</argument>
-                  <argument>Edvcu5vWP5e7zeNuE5bzPw</argument>
+                  <argument>xYLn9I3nxwyId0NovTWTYw</argument>
                   <argument>C:\xampp_1\htdocs\star_craft_online\var\cache\dev/pools</argument>
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -501,7 +508,7 @@
                   <tag name="cache.pool"/>
                   <argument>JHVNQOEaaH</argument>
                   <argument>0</argument>
-                  <argument>Edvcu5vWP5e7zeNuE5bzPw</argument>
+                  <argument>xYLn9I3nxwyId0NovTWTYw</argument>
                   <argument>C:\xampp_1\htdocs\star_craft_online\var\cache\dev/pools</argument>
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -833,7 +840,7 @@
       <tag name="cache.pool"/>
       <argument>UK4JR46K0g</argument>
       <argument>0</argument>
-      <argument>Edvcu5vWP5e7zeNuE5bzPw</argument>
+      <argument>xYLn9I3nxwyId0NovTWTYw</argument>
       <argument>C:\xampp_1\htdocs\star_craft_online\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -1417,6 +1424,14 @@
         </argument>
         <argument>0</argument>
       </call>
+      <call method="addListenerService">
+        <argument>kernel.request</argument>
+        <argument type="collection">
+          <argument>knp_paginator.subscriber.sliding_pagination</argument>
+          <argument>onKernelRequest</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
       <call method="addSubscriberService">
         <argument>response_listener</argument>
         <argument>Symfony\Component\HttpKernel\EventListener\ResponseListener</argument>
@@ -1513,6 +1528,46 @@
         <argument>web_profiler.debug_toolbar</argument>
         <argument>Symfony\Bundle\WebProfilerBundle\EventListener\WebDebugToolbarListener</argument>
       </call>
+      <call method="addListenerService">
+        <argument>knp_pager.before</argument>
+        <argument type="collection">
+          <argument>knp_paginator.subscriber.paginate</argument>
+          <argument>before</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListenerService">
+        <argument>knp_pager.pagination</argument>
+        <argument type="collection">
+          <argument>knp_paginator.subscriber.paginate</argument>
+          <argument>pagination</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListenerService">
+        <argument>knp_pager.before</argument>
+        <argument type="collection">
+          <argument>knp_paginator.subscriber.sortable</argument>
+          <argument>before</argument>
+        </argument>
+        <argument>1</argument>
+      </call>
+      <call method="addListenerService">
+        <argument>knp_pager.before</argument>
+        <argument type="collection">
+          <argument>knp_paginator.subscriber.filtration</argument>
+          <argument>before</argument>
+        </argument>
+        <argument>1</argument>
+      </call>
+      <call method="addListenerService">
+        <argument>knp_pager.pagination</argument>
+        <argument type="collection">
+          <argument>knp_paginator.subscriber.sliding_pagination</argument>
+          <argument>pagination</argument>
+        </argument>
+        <argument>1</argument>
+      </call>
     </service>
     <service id="debug.controller_resolver" class="Symfony\Component\HttpKernel\Controller\TraceableControllerResolver">
       <tag name="monolog.logger" channel="request"/>
@@ -1578,7 +1633,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>584c65d46078e7.16317499</argument>
+            <argument>584ef5740bc517.44415129</argument>
           </service>
         </argument>
       </argument>
@@ -1826,7 +1881,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>584c65d46078e7.16317499</argument>
+            <argument>584ef5740bc517.44415129</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2029,6 +2084,9 @@
             <tag name="twig.extension"/>
           </service>
         </argument>
+      </call>
+      <call method="addExtension">
+        <argument type="service" id="knp_paginator.twig.extension.pagination"/>
       </call>
       <call method="addExtension">
         <argument type="service">
@@ -2345,6 +2403,46 @@
       <argument type="service" id="security.role_hierarchy" on-invalid="null"/>
       <argument type="service" id="security.token_storage" on-invalid="null"/>
       <argument type="service" id="security.authorization_checker" on-invalid="null"/>
+    </service>
+    <service id="knp_paginator" class="Knp\Component\Pager\Paginator">
+      <argument type="service" id="debug.event_dispatcher"/>
+      <call method="setDefaultPaginatorOptions">
+        <argument type="collection">
+          <argument key="pageParameterName">page</argument>
+          <argument key="sortFieldParameterName">sort</argument>
+          <argument key="sortDirectionParameterName">direction</argument>
+          <argument key="filterFieldParameterName">filterField</argument>
+          <argument key="filterValueParameterName">filterValue</argument>
+          <argument key="distinct">true</argument>
+        </argument>
+      </call>
+    </service>
+    <service id="knp_paginator.subscriber.paginate" class="Knp\Component\Pager\Event\Subscriber\Paginate\PaginationSubscriber">
+      <tag name="knp_paginator.subscriber"/>
+    </service>
+    <service id="knp_paginator.subscriber.sortable" class="Knp\Component\Pager\Event\Subscriber\Sortable\SortableSubscriber">
+      <tag name="knp_paginator.subscriber"/>
+    </service>
+    <service id="knp_paginator.subscriber.filtration" class="Knp\Component\Pager\Event\Subscriber\Filtration\FiltrationSubscriber">
+      <tag name="knp_paginator.subscriber"/>
+    </service>
+    <service id="knp_paginator.subscriber.sliding_pagination" class="Knp\Bundle\PaginatorBundle\Subscriber\SlidingPaginationSubscriber">
+      <tag name="knp_paginator.subscriber"/>
+      <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest"/>
+      <argument type="collection">
+        <argument key="defaultPaginationTemplate">KnpPaginatorBundle:Pagination:sliding.html.twig</argument>
+        <argument key="defaultSortableTemplate">KnpPaginatorBundle:Pagination:sortable_link.html.twig</argument>
+        <argument key="defaultFiltrationTemplate">KnpPaginatorBundle:Pagination:filtration.html.twig</argument>
+        <argument key="defaultPageRange">5</argument>
+      </argument>
+    </service>
+    <service id="knp_paginator.helper.processor" class="Knp\Bundle\PaginatorBundle\Helper\Processor">
+      <argument type="service" id="router"/>
+      <argument type="service" id="translator"/>
+    </service>
+    <service id="knp_paginator.twig.extension.pagination" class="Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension">
+      <tag name="twig.extension"/>
+      <argument type="service" id="knp_paginator.helper.processor"/>
     </service>
     <service id="data_collector.dump" class="Symfony\Component\HttpKernel\DataCollector\DumpDataCollector">
       <tag name="data_collector" id="dump" template="@Debug/Profiler/dump.html.twig" priority="240"/>
@@ -2674,6 +2772,10 @@
       <call method="addPath">
         <argument>C:\xampp_1\htdocs\star_craft_online\vendor\doctrine\doctrine-bundle/Resources/views</argument>
         <argument>Doctrine</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\xampp_1\htdocs\star_craft_online\vendor\knplabs\knp-paginator-bundle/Resources/views</argument>
+        <argument>KnpPaginator</argument>
       </call>
       <call method="addPath">
         <argument>C:\xampp_1\htdocs\star_craft_online\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/views</argument>

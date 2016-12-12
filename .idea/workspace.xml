@@ -20,13 +20,18 @@
     <favorites_list name="star_craft_online" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DataGeneratorController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DataGeneratorController.php">
+    <leaf>
+      <file leaf-file-name="GameController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/GameController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="112" column="27" selection-start-line="112" selection-start-column="27" selection-end-line="112" selection-end-column="27" />
-              <folding />
+            <state relative-caret-position="285">
+              <caret line="101" column="3" selection-start-line="101" selection-start-column="3" selection-end-line="101" selection-end-column="3" />
+              <folding>
+                <element signature="e#122#155#0#PHP" expanded="true" />
+                <marker date="1481577639643" expanded="true" signature="1128:1163" ph="SELECT a FRO... DataBundle" />
+                <marker date="1481577639643" expanded="true" signature="1989:2024" ph="SELECT a FRO... DataBundle" />
+                <marker date="1481577639643" expanded="true" signature="3490:3525" ph="SELECT a FRO... DataBundle" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -34,68 +39,58 @@
       <file leaf-file-name="GalaxiesPlanets.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DataBundle/Entity/GalaxiesPlanets.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="637">
-              <caret line="86" column="32" selection-start-line="86" selection-start-column="32" selection-end-line="86" selection-end-column="32" />
+            <state relative-caret-position="221">
+              <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Planets.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DataBundle/Entity/Planets.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="671">
-              <caret line="221" column="28" selection-start-line="221" selection-start-column="28" selection-end-line="221" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Galaxies.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DataBundle/Entity/Galaxies.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="637">
-              <caret line="80" column="29" selection-start-line="80" selection-start-column="20" selection-end-line="80" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GameController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/GameController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main-menu.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/partials/main-menu.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="33" column="110" selection-start-line="33" selection-start-column="110" selection-end-line="33" selection-end-column="110" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="galactics.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/galactics.html.twig">
+      <file leaf-file-name="Armies.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DataBundle/Entity/Armies.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="22" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="side-menu.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/partials/side-menu.html.twig">
+      <file leaf-file-name="Shit1Shit2.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DataBundle/Entity/Shit1Shit2.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="113">
-              <caret line="13" column="102" selection-start-line="13" selection-start-column="102" selection-end-line="13" selection-end-column="102" />
+            <state relative-caret-position="-162">
+              <caret line="38" column="31" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Shit2.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DataBundle/Entity/Shit2.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Shit.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DataBundle/Entity/Shit.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EntityManager.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/doctrine/orm/lib/Doctrine/ORM/EntityManager.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="157">
+              <caret line="361" column="76" selection-start-line="361" selection-start-column="72" selection-end-line="361" selection-end-column="76" />
               <folding />
             </state>
           </provider>
@@ -104,8 +99,8 @@
       <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/HomeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="50" column="29" selection-start-line="50" selection-start-column="26" selection-end-line="50" selection-end-column="29" />
+            <state relative-caret-position="287">
+              <caret line="28" column="20" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -114,8 +109,8 @@
       <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1188">
-              <caret line="80" column="41" selection-start-line="80" selection-start-column="41" selection-end-line="80" selection-end-column="41" />
+            <state relative-caret-position="83">
+              <caret line="73" column="50" selection-start-line="73" selection-start-column="40" selection-end-line="73" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -138,13 +133,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Resources/js/script.js" />
-        <option value="$PROJECT_DIR$/app/AppKernel.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/SecurityController.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/BindingModels/LoginUserBindingModel.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/pages/login.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/DTO/LoginUserBindingModel.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/default/login.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/web/js/app.js" />
         <option value="$PROJECT_DIR$/web/js/sc/helpers.js" />
@@ -171,7 +159,6 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Form/RegisterUserType.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/game-base.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/pages/game.html.twig" />
-        <option value="$PROJECT_DIR$/web/css/css.css" />
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/src/DataBundle/Entity/Races.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/UserController.php" />
@@ -179,16 +166,24 @@
         <option value="$PROJECT_DIR$/src/DataBundle/Entity/Players.php" />
         <option value="$PROJECT_DIR$/src/DataBundle/Entity/Units.php" />
         <option value="$PROJECT_DIR$/src/DataBundle/Entity/PlayerUnits.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/GameController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/pages/galactics.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/partials/main-menu.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/partials/side-menu.html.twig" />
         <option value="$USER_HOME$/Desktop/index.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/src/DataBundle/Entity/Galaxies.php" />
         <option value="$PROJECT_DIR$/src/DataBundle/Entity/Planets.php" />
-        <option value="$PROJECT_DIR$/src/DataBundle/Entity/GalaxiesPlanets.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/DataGeneratorController.php" />
+        <option value="$PROJECT_DIR$/app/AppKernel.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/pages/pagination.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/pages/galaxies.html.twig.html" />
+        <option value="$PROJECT_DIR$/app/config/config.yml" />
+        <option value="$PROJECT_DIR$/web/css/css.css" />
+        <option value="$PROJECT_DIR$/app/Resources/views/partials/side-menu.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/pages/galaxy.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/pages/galaxies.html.twig" />
+        <option value="$PROJECT_DIR$/src/DataBundle/Entity/Shit1Shit2.php" />
+        <option value="$PROJECT_DIR$/src/DataBundle/Entity/GalaxiesPlanets.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/GameController.php" />
       </list>
     </option>
   </component>
@@ -202,7 +197,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1924" />
+    <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -357,6 +352,82 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="races" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="star_craft_online" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="star_craft_online" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bundles" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="star_craft_online" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="star_craft_online" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="star_craft_online" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="star_craft_online" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="knplabs" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="knp-paginator-bundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="star_craft_online" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="star_craft_online" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="knplabs" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="knp-components" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -710,8 +781,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp_1\htdocs\star_craft_online" />
       <recent name="C:\xampp_1\htdocs\star_craft_online\src\DataBundle\Entity" />
+      <recent name="C:\xampp_1\htdocs\star_craft_online" />
       <recent name="C:\xampp_1\htdocs\star_craft_online\web\css\images\menu-icons\races" />
       <recent name="C:\xampp_1\htdocs\star_craft_online\app\Resources\views" />
       <recent name="C:\xampp_1\htdocs\star_craft_online\web\css\images\menu-icons" />
@@ -786,18 +857,18 @@
       <workItem from="1480625346963" duration="2558000" />
       <workItem from="1480784002521" duration="35571000" />
       <workItem from="1481354616643" duration="32392000" />
-      <workItem from="1481459550092" duration="23862000" />
+      <workItem from="1481459550092" duration="39933000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114806000" />
+    <option name="totallyTimeSpent" value="130877000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1924" height="1056" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1981132" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.196875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -854,105 +925,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/js/sc.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Controller/Controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/Security/Core/User/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-85">
-          <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataBundle/Entity/PlanetTypes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Encoder/UserPasswordEncoder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
-          <caret line="38" column="48" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/login.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataBundle/Repository/Test.php" />
-    <entry file="file://$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Types/TextType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/ClassMetadataInfo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-408">
-          <caret line="49" column="6" selection-start-line="49" selection-start-column="6" selection-end-line="49" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/ClassMetadata.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/doctrine/orm/lib/Doctrine/ORM/EntityRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="63" column="64" selection-start-line="63" selection-start-column="37" selection-end-line="63" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/services.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataBundle/Entity/Test.php" />
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-77">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/DTO/LoginUserBindingModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/DTO/RegisterUserBindingModel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="287">
@@ -965,14 +937,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="27" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
           <folding />
         </state>
       </provider>
@@ -1017,14 +981,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/css.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1373">
-          <caret line="440" column="23" selection-start-line="440" selection-start-column="23" selection-end-line="440" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/DataBundle/DataBundle.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -1037,22 +993,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/game.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/game-base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -1089,42 +1029,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataBundle/Entity/Races.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/DataBundle/Repository/RacesRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataBundle/Entity/PlanetPlayers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="62" column="33" selection-start-line="62" selection-start-column="33" selection-end-line="62" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataBundle/Entity/Armies.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataBundle/Entity/Players.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="637">
-          <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1137,34 +1045,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataBundle/Entity/PlayerUnits.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1241">
-          <caret line="73" column="5" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/galactics.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="22" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/partials/main-menu.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="33" column="110" selection-start-line="33" selection-start-column="110" selection-end-line="33" selection-end-column="110" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/partials/side-menu.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="13" column="102" selection-start-line="13" selection-start-column="102" selection-end-line="13" selection-end-column="102" />
           <folding />
         </state>
       </provider>
@@ -1185,59 +1069,272 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/UserController.php">
+    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1188">
-          <caret line="80" column="41" selection-start-line="80" selection-start-column="41" selection-end-line="80" selection-end-column="41" />
+        <state relative-caret-position="510">
+          <caret line="30" column="42" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/HomeController.php">
+    <entry file="file://$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/KnpPaginatorBundle.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="50" column="29" selection-start-line="50" selection-start-column="26" selection-end-line="50" selection-end-column="29" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/GameController.php">
+    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="47" />
+        <state relative-caret-position="306">
+          <caret line="19" column="63" selection-start-line="19" selection-start-column="63" selection-end-line="19" selection-end-column="63" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataBundle/Entity/Galaxies.php">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/partials/main-menu.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="637">
-          <caret line="80" column="29" selection-start-line="80" selection-start-column="20" selection-end-line="80" selection-end-column="29" />
+        <state relative-caret-position="510">
+          <caret line="33" column="110" selection-start-line="33" selection-start-column="110" selection-end-line="33" selection-end-column="110" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataBundle/Entity/Planets.php">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/game.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="671">
-          <caret line="221" column="28" selection-start-line="221" selection-start-column="28" selection-end-line="221" selection-end-column="28" />
+        <state relative-caret-position="85">
+          <caret line="5" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataBundle/Entity/GalaxiesPlanets.php">
+    <entry file="file://$PROJECT_DIR$/web/css/css.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="637">
-          <caret line="86" column="32" selection-start-line="86" selection-start-column="32" selection-end-line="86" selection-end-column="32" />
+        <state relative-caret-position="322">
+          <caret line="477" column="30" selection-start-line="477" selection-start-column="30" selection-end-line="477" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/game-base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DataGeneratorController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
+        <state relative-caret-position="1751">
           <caret line="112" column="27" selection-start-line="112" selection-start-column="27" selection-end-line="112" selection-end-column="27" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/pagination.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="24" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/partials/side-menu.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="29" column="59" selection-start-line="29" selection-start-column="59" selection-end-line="29" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/galaxies.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="32" column="106" selection-start-line="32" selection-start-column="106" selection-end-line="32" selection-end-column="106" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/doctrine/orm/lib/Doctrine/ORM/ORMException.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/doctrine/orm/lib/Doctrine/ORM/EntityRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="63" column="64" selection-start-line="63" selection-start-column="37" selection-end-line="63" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/galaxy.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="10" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config_dev.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="53" column="24" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataBundle/Entity/Planets.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="68" column="27" selection-start-line="68" selection-start-column="27" selection-end-line="68" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataBundle/Entity/Flights.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataBundle/Entity/Galaxies.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataBundle/Entity/Races.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="28" column="20" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83">
+          <caret line="73" column="50" selection-start-line="73" selection-start-column="40" selection-end-line="73" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/doctrine/orm/lib/Doctrine/ORM/EntityManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="361" column="76" selection-start-line="361" selection-start-column="72" selection-end-line="361" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataBundle/Entity/PlanetPlayers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="62" column="33" selection-start-line="62" selection-start-column="33" selection-end-line="62" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataBundle/Entity/Players.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataBundle/Entity/Shit2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataBundle/Entity/Shit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataBundle/Entity/PlayerUnits.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-442">
+          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataBundle/Entity/Shit1Shit2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-162">
+          <caret line="38" column="31" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataBundle/Entity/BuildingsUnits.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="21" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataBundle/Entity/Armies.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataBundle/Entity/GalaxiesPlanets.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/GameController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="101" column="3" selection-start-line="101" selection-start-column="3" selection-end-line="101" selection-end-column="3" />
+          <folding>
+            <element signature="e#122#155#0#PHP" expanded="true" />
+            <marker date="1481577639643" expanded="true" signature="1128:1163" ph="SELECT a FRO... DataBundle" />
+            <marker date="1481577639643" expanded="true" signature="1989:2024" ph="SELECT a FRO... DataBundle" />
+            <marker date="1481577639643" expanded="true" signature="3490:3525" ph="SELECT a FRO... DataBundle" />
+          </folding>
         </state>
       </provider>
     </entry>

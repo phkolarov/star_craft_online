@@ -173,4 +173,202 @@ class Planets extends \DataBundle\Entity\Planets implements \Doctrine\ORM\Proxy\
     }
 
     
+    /**
+     * {@inheritDoc}
+     */
+    public function getId(): int
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getId', []);
+
+        return parent::getId();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setId(int $id)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setId', [$id]);
+
+        return parent::setId($id);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getName(): string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getName', []);
+
+        return parent::getName();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setName(string $name)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setName', [$name]);
+
+        return parent::setName($name);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getImageUri(): string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getImageUri', []);
+
+        return parent::getImageUri();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setImageUri(string $imageUri)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setImageUri', [$imageUri]);
+
+        return parent::setImageUri($imageUri);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getX(): int
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getX', []);
+
+        return parent::getX();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setX(int $x)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setX', [$x]);
+
+        return parent::setX($x);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getY(): int
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getY', []);
+
+        return parent::getY();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setY(int $y)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setY', [$y]);
+
+        return parent::setY($y);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getMineral(): float
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getMineral', []);
+
+        return parent::getMineral();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setMineral(float $mineral)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setMineral', [$mineral]);
+
+        return parent::setMineral($mineral);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getMetal(): float
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getMetal', []);
+
+        return parent::getMetal();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setMetal(float $metal)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setMetal', [$metal]);
+
+        return parent::setMetal($metal);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getGas(): float
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getGas', []);
+
+        return parent::getGas();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setGas(float $gas)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setGas', [$gas]);
+
+        return parent::setGas($gas);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getType(): \DataBundle\Entity\PlanetTypes
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getType', []);
+
+        return parent::getType();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setType(\DataBundle\Entity\PlanetTypes $type)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setType', [$type]);
+
+        return parent::setType($type);
+    }
+
 }

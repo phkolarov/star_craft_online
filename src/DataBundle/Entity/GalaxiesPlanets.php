@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * GalaxiesPlanets
  *
- * @ORM\Table(name="galaxies_planets", indexes={@ORM\Index(name="FK_galaxies_planets_galaxies", columns={"galaxyId"}), @ORM\Index(name="FK_galaxies_planets_planets", columns={"planetId"})})
+ * @ORM\Table(name="galaxies_planets", indexes={@ORM\Index(name="FK_galaxies_planets_galaxies", columns={"galaxy_Id"}), @ORM\Index(name="FK_galaxies_planets_planets", columns={"planet_Id"})})
  * @ORM\Entity
  */
 class GalaxiesPlanets
@@ -26,69 +26,20 @@ class GalaxiesPlanets
      *
      * @ORM\ManyToOne(targetEntity="Galaxies")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="galaxyId", referencedColumnName="id")
+     *   @ORM\JoinColumn(name="galaxy_Id", referencedColumnName="id")
      * })
      */
-    private $galaxyid;
+    private $galaxy;
 
     /**
      * @var \Planets
      *
      * @ORM\ManyToOne(targetEntity="Planets")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="planetId", referencedColumnName="id")
+     *   @ORM\JoinColumn(name="planet_Id", referencedColumnName="id")
      * })
      */
-    private $planetid;
-
-    /**
-     * @return int
-     */
-    public function getId(): int
-    {
-        return $this->id;
-    }
-
-    /**
-     * @param int $id
-     */
-    public function setId(int $id)
-    {
-        $this->id = $id;
-    }
-
-    /**
-     * @return \Galaxies
-     */
-    public function getGalaxyid(): Galaxies
-    {
-        return $this->galaxyid;
-    }
-
-    /**
-     * @param \Galaxies $galaxyid
-     */
-    public function setGalaxyid(Galaxies $galaxyid)
-    {
-        $this->galaxyid = $galaxyid;
-    }
-
-    /**
-     * @return \Planets
-     */
-    public function getPlanetid(): Players
-    {
-        return $this->planetid;
-    }
-
-    /**
-     * @param \Planets $planetid
-     */
-    public function setPlanetid(Planets $planetid)
-    {
-        $this->planetid = $planetid;
-    }
-
+    private $planet;
 
 
 }
