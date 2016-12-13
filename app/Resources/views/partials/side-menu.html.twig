@@ -1,4 +1,4 @@
-<div class="col-md-3" id="leftSideMenu">
+<div class="col-md-2" id="leftSideMenu">
     <nav class="navbar navbar-inverse sidebar" role="navigation">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -13,7 +13,7 @@
                     <div class="col-xs-5">
                         <img id="menu-race" src="css/images/menu-icons/races/{{ app.user.race.imageUri }}.gif">
                     </div>
-                    <div class="col-xs-6" id="menu-race-info-block">
+                    <div class="col-xs-7" id="menu-race-info-block">
                         <p>Раса: {{ app.user.race.name}} </p>
                         <p>Левел: {{ app.user.level}} </p>
                         <p>XP: {{ app.user.xp}} </p>
@@ -28,8 +28,8 @@
             <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="{{ path("mygalaxies") }}">Галактика<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
-                    <li ><a href="#">Profile<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
-                    <li ><a href="#">Messages<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
+                    <li ><a href="{{ path("buildings") }}">Сгради<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
+                    <li ><a href="{{ path("units") }}">Бойни единици<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a>
                         <ul class="dropdown-menu forAnimate" role="menu">

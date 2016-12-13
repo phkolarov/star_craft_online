@@ -64,10 +64,10 @@ class Players extends \DataBundle\Entity\Players implements \Doctrine\ORM\Proxy\
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'DataBundle\\Entity\\Players' . "\0" . 'id', '' . "\0" . 'DataBundle\\Entity\\Players' . "\0" . 'username', '' . "\0" . 'DataBundle\\Entity\\Players' . "\0" . 'password', '' . "\0" . 'DataBundle\\Entity\\Players' . "\0" . 'email', '' . "\0" . 'DataBundle\\Entity\\Players' . "\0" . 'avatarUri', '' . "\0" . 'DataBundle\\Entity\\Players' . "\0" . 'level', '' . "\0" . 'DataBundle\\Entity\\Players' . "\0" . 'xp', '' . "\0" . 'DataBundle\\Entity\\Players' . "\0" . 'race', '' . "\0" . 'DataBundle\\Entity\\Players' . "\0" . 'resource'];
+            return ['__isInitialized__', '' . "\0" . 'DataBundle\\Entity\\Players' . "\0" . 'id', '' . "\0" . 'DataBundle\\Entity\\Players' . "\0" . 'username', '' . "\0" . 'DataBundle\\Entity\\Players' . "\0" . 'password', '' . "\0" . 'DataBundle\\Entity\\Players' . "\0" . 'email', '' . "\0" . 'DataBundle\\Entity\\Players' . "\0" . 'avatarUri', '' . "\0" . 'DataBundle\\Entity\\Players' . "\0" . 'level', '' . "\0" . 'DataBundle\\Entity\\Players' . "\0" . 'xp', '' . "\0" . 'DataBundle\\Entity\\Players' . "\0" . 'race', '' . "\0" . 'DataBundle\\Entity\\Players' . "\0" . 'sender', '' . "\0" . 'DataBundle\\Entity\\Players' . "\0" . 'resource'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'DataBundle\\Entity\\Players' . "\0" . 'id', '' . "\0" . 'DataBundle\\Entity\\Players' . "\0" . 'username', '' . "\0" . 'DataBundle\\Entity\\Players' . "\0" . 'password', '' . "\0" . 'DataBundle\\Entity\\Players' . "\0" . 'email', '' . "\0" . 'DataBundle\\Entity\\Players' . "\0" . 'avatarUri', '' . "\0" . 'DataBundle\\Entity\\Players' . "\0" . 'level', '' . "\0" . 'DataBundle\\Entity\\Players' . "\0" . 'xp', '' . "\0" . 'DataBundle\\Entity\\Players' . "\0" . 'race', '' . "\0" . 'DataBundle\\Entity\\Players' . "\0" . 'resource'];
+        return ['__isInitialized__', '' . "\0" . 'DataBundle\\Entity\\Players' . "\0" . 'id', '' . "\0" . 'DataBundle\\Entity\\Players' . "\0" . 'username', '' . "\0" . 'DataBundle\\Entity\\Players' . "\0" . 'password', '' . "\0" . 'DataBundle\\Entity\\Players' . "\0" . 'email', '' . "\0" . 'DataBundle\\Entity\\Players' . "\0" . 'avatarUri', '' . "\0" . 'DataBundle\\Entity\\Players' . "\0" . 'level', '' . "\0" . 'DataBundle\\Entity\\Players' . "\0" . 'xp', '' . "\0" . 'DataBundle\\Entity\\Players' . "\0" . 'race', '' . "\0" . 'DataBundle\\Entity\\Players' . "\0" . 'sender', '' . "\0" . 'DataBundle\\Entity\\Players' . "\0" . 'resource'];
     }
 
     /**
@@ -352,6 +352,28 @@ class Players extends \DataBundle\Entity\Players implements \Doctrine\ORM\Proxy\
     /**
      * {@inheritDoc}
      */
+    public function getSender(): \Doctrine\Common\Collections\Collection
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getSender', []);
+
+        return parent::getSender();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setSender(\Doctrine\Common\Collections\Collection $sender)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setSender', [$sender]);
+
+        return parent::setSender($sender);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function getResource(): \Doctrine\Common\Collections\Collection
     {
 
@@ -369,6 +391,39 @@ class Players extends \DataBundle\Entity\Players implements \Doctrine\ORM\Proxy\
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setResource', [$resource]);
 
         return parent::setResource($resource);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getRoles()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getRoles', []);
+
+        return parent::getRoles();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getSalt()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getSalt', []);
+
+        return parent::getSalt();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function eraseCredentials()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'eraseCredentials', []);
+
+        return parent::eraseCredentials();
     }
 
 }

@@ -1,0 +1,41 @@
+{% extends 'game-base.html.twig' %}
+
+
+{% block body %}
+
+    {#{{ include('default/login.html.twig') }}#}
+
+    <div style="width: 53%" class="col-md-6">
+        <div class="row">
+
+            <div class="col-md-12" id="gameContent">
+                <h3 id="planetName">{{ planetName }}</h3>
+                <div id="currentPlanetWrapper">
+                    
+
+                    <img id="currentPlanet" src="css/images/planets/gas.png">
+                    
+                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div id="planetInfoMenu">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>Ресурси</p>
+                    <ul>
+                        <li>Метал: {{ metal }}</li>
+                        <li>Минерал: {{ mineral }}</li>
+                        <li>Газ: {{ gas }}</li>
+                    </ul>
+                    <p>Копачи: 3</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

@@ -277,6 +277,9 @@ body{
     min-height:1000px;
     padding: 0px;
 }
+#leftSideMenu{
+    min-width: 370px;
+}
 #gameContent{
     margin: 5px 10px;
 }
@@ -439,15 +442,16 @@ section{
     padding-left: 15px;
 }
 #menu-race{
-    width: 166px;
+    width: 139px;
     position: relative;
     display: block;
 }
 .profile-menu-info{
-    height: 200px;
+    height: 230px;
 }
 #menu-race-info-block{
     text-align: left;
+    padding-left: 23px;
 }
 .table-bordered {
     border: 1px solid #dddddd;
@@ -617,4 +621,36 @@ thead {
 }
 .entityActionButton{
     margin-bottom: 10px;
+}
+#galaxyInfoMenu{
+    border: 1px solid #080808;
+    background-color: rgba(34, 34, 34, 0.91);
+    color: white;
+    padding: 10px;
+}
+#galaxyInfoMenu ul{
+    list-style-type: none;
+    padding-left: 10px;
+}
+#currentPlanetWrapper{
+}
+#planetName{
+    text-align: center;
+    color: white;
+}
+#currentPlanet{
+    width:65%;
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+#planetInfoMenu{
+    border: 1px solid #080808;
+    background-color: rgba(34, 34, 34, 0.91);
+    color: white;
+    padding: 10px;
+}
+#planetInfoMenu ul{
+    list-style-type: none;
+    padding-left: 10px;
 }

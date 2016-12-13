@@ -1,0 +1,52 @@
+{% extends 'game-base.html.twig' %}
+
+
+{% block body %}
+
+    <div style="width: 53%" class="col-md-6">
+        <div class="row">
+
+            <div class="col-md-12" id="gameContent">
+                <div class="buildingsWrapper">
+
+                    <div class="widget-content">
+
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Име на сграда</th>
+                                <th></th>
+                                <th class="td-actions"></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for building in buildings %}
+                                <tr {% if loop.index is odd %}class="color"{% endif %}>
+                                    <td>#{{ building.getId() }}</td>
+                                    <td>{{ building.getName() }}</td>
+                                    <td><img style="width: 60px; height: 60px" src="css/images/buildings/{{ building.getImageUri() }}.jpg"></td>
+                                    <td class="td-actions">
+                                        <a href="{{ path('galaxy',{'id': building.getId(),'name': building.getName()}) }}"
+                                           class="btn btn-small btn-primary">
+                                            <i class="btn-icon-only icon-ok">ЗАРЕДИ</i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                        <div class="navigation">
+                            {{ knp_pagination_render(buildings) }}
+                        </div>
+
+                    </div> <!-- /widget-content -->
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+{% endblock %}

@@ -127,9 +127,27 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     return $this->mergeDefaults(array_replace($matches, array('_route' => 'galaxy')), array (  '_controller' => 'AppBundle\\Controller\\GameController::galaxy',));
                 }
 
-                // testPagination
-                if ($pathinfo === '/game/pagination') {
-                    return array (  '_controller' => 'AppBundle\\Controller\\GameController::testPaginator',  '_route' => 'testPagination',);
+                if (0 === strpos($pathinfo, '/game/p')) {
+                    // planet
+                    if (0 === strpos($pathinfo, '/game/planet') && preg_match('#^/game/planet/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'planet')), array (  '_controller' => 'AppBundle\\Controller\\GameController::myPlanet',));
+                    }
+
+                    // testPagination
+                    if ($pathinfo === '/game/pagination') {
+                        return array (  '_controller' => 'AppBundle\\Controller\\GameController::testPaginator',  '_route' => 'testPagination',);
+                    }
+
+                }
+
+                // buildings
+                if ($pathinfo === '/game/buildings') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\GameController::buildings',  '_route' => 'buildings',);
+                }
+
+                // units
+                if ($pathinfo === '/game/units') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\GameController::units',  '_route' => 'units',);
                 }
 
             }

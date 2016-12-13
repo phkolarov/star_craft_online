@@ -40,7 +40,7 @@ class GameController extends Controller
     {
 
         $em = $this->get('doctrine.orm.entity_manager');
-        $dql = "SELECT a FROM DataBundle:Galaxies a";
+        $dql = "SELECT a FROM DataBundle:Galaxy a";
         $query = $em->createQuery($dql);
 
         $paginator = $this->get('knp_paginator');
@@ -50,7 +50,7 @@ class GameController extends Controller
             12/*limit per page*/
         );
 
-        return $this->render('pages/galaxies.html.twig',[
+        return $this->render('pages/galaxies.html.twig', [
             'planetCount' => $this->getProfileInfoData()->planetCount,
             'unitsCount' => $this->getProfileInfoData()->unitsCount,
             'galaxies' => $galaxies
@@ -62,7 +62,8 @@ class GameController extends Controller
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function playerGalaxies(Request $request){
+    public function playerGalaxies(Request $request)
+    {
 
         $em = $this->get('doctrine.orm.entity_manager');
         $dql = "SELECT a FROM DataBundle:Galaxies a";
@@ -75,7 +76,7 @@ class GameController extends Controller
             12/*limit per page*/
         );
 
-        return $this->render('pages/player-galaxies.html.twig',[
+        return $this->render('pages/player-galaxies.html.twig', [
             'planetCount' => $this->getProfileInfoData()->planetCount,
             'unitsCount' => $this->getProfileInfoData()->unitsCount,
             'galaxies' => $galaxies
@@ -88,7 +89,8 @@ class GameController extends Controller
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function galaxy(Request $request){
+    public function galaxy(Request $request)
+    {
 
         $galaxyId = $request->get('id');
         $galaxtName = $request->get('name');
@@ -96,35 +98,75 @@ class GameController extends Controller
 
         $em = $this->getDoctrine()->getManager();
         $galaxy = $em->getRepository('DataBundle:Galaxy')->find($galaxyId);
-        $planetsOfGalaxy = $em->getRepository('DataBundle:GalaxyPlanet')->findBy(array('galaxy'=>$galaxy));
+        $planetsOfGalaxy = $em->getRepository('DataBundle:GalaxyPlanet')->findBy(array('galaxy' => $galaxy));
 
         $planets = [];
+        $players = [];
+
+
         foreach ($planetsOfGalaxy as $planet) {
+            $owner = $planet->getPlanet()->getOwner() != null ? $planet->getPlanet()->getOwner()->getUsername() : 'незаселена';
+            $ownerId = $planet->getPlanet()->getOwner() != null ? $planet->getPlanet()->getOwner()->getId() : '-1';
 
             $planets[] = array(
-                'id'=> $planet->getPlanet()->getId(),
-                'name'=> $planet->getPlanet()->getName(),
-                'owner'=> $planet->getPlanet()->getOwner() != null ? $planet->getPlanet()->getOwner()->getUsername(): 'незаселена',
-                'ownerId'=> $planet->getPlanet()->getOwner() != null ? $planet->getPlanet()->getOwner()->getId(): '-1',
-                'X'=> $planet->getPlanet()->getX(),
-                'Y'=> $planet->getPlanet()->getY(),
-                'type'=>$planet->getPlanet()->getType()->getName(),
-                'metal'=>$planet->getPlanet()->getMetal(),
-                'mineral'=>$planet->getPlanet()->getMineral(),
-                'gas'=>$planet->getPlanet()->getGas(),
-                'image'=>$planet->getPlanet()->getImageUri(),
+                'id' => $planet->getPlanet()->getId(),
+                'name' => $planet->getPlanet()->getName(),
+                'owner' => $owner,
+                'ownerId' => $ownerId,
+                'X' => $planet->getPlanet()->getX(),
+                'Y' => $planet->getPlanet()->getY(),
+                'type' => $planet->getPlanet()->getType()->getName(),
+                'metal' => $planet->getPlanet()->getMetal(),
+                'mineral' => $planet->getPlanet()->getMineral(),
+                'gas' => $planet->getPlanet()->getGas(),
+                'image' => $planet->getPlanet()->getImageUri(),
             );
+
+            if ($ownerId != '-1') {
+                if (!array_key_exists($ownerId, $players)) {
+                    $players[$ownerId] = $owner;
+                };
+            }
         }
 
-        return $this->render('pages/galaxy.html.twig',[
+        return $this->render('pages/galaxy.html.twig', [
             'planetCount' => $this->getProfileInfoData()->planetCount,
             'unitsCount' => $this->getProfileInfoData()->unitsCount,
             'galaxyName' => $galaxtName,
-            'planets'=>$planets
+            'planets' => $planets,
+            'players' => $players
         ]);
 
     }
 
+
+    /**
+     * @Route("game/planet/{id}", name="planet")
+     */
+    public function myPlanet(Request $request){
+
+        $planetId = $request->get('id');
+        $usr= $this->get('security.token_storage')->getToken()->getUser();
+        $userId = $usr->getId();
+
+        $em = $this->getDoctrine()->getEntityManager();
+        $currentPlanet = $em->getRepository('DataBundle:Planet')->find($planetId);
+        $planetPlayerId = $currentPlanet->getOwner()->getId();
+
+        if($currentPlanet != null && $userId == $planetPlayerId ){
+
+            return $this->render('/pages/planet.html.twig',[
+                'planetCount' => $this->getProfileInfoData()->planetCount,
+                'unitsCount' => $this->getProfileInfoData()->unitsCount,
+                'planetName'=> $currentPlanet->getName(),
+                'metal'=> $currentPlanet->getMetal(),
+                'mineral'=> $currentPlanet->GetMineral(),
+                'gas'=> $currentPlanet->getGas(),
+                'dockers'=>$this->getDockers()
+            ]);
+        }
+     return $this->redirect('home');
+    }
 
     /**
      * @Route("game/pagination", name="testPagination")
@@ -158,6 +200,47 @@ class GameController extends Controller
             'planetCount' => $planetCount,
             'unitsCount' => $unitsCount
         );
+    }
+
+    /**
+     * @Route("game/buildings", name="buildings")
+     */
+    public function buildings(Request $request){
+
+        $em = $this->get('doctrine.orm.entity_manager');
+        $dql = "SELECT a FROM DataBundle:Buildings a";
+        $query = $em->createQuery($dql);
+
+        $paginator = $this->get('knp_paginator');
+        $buildings = $paginator->paginate(
+            $query, /* query NOT result */
+            $request->query->getInt('page', 1)/*page number*/,
+            12/*limit per page*/
+        );
+
+        return $this->render('pages/buildings.html.twig', [
+            'planetCount' => $this->getProfileInfoData()->planetCount,
+            'unitsCount' => $this->getProfileInfoData()->unitsCount,
+            'buildings' => $buildings
+        ]);
+    }
+
+    /**
+     * @Route("game/units", name="units")
+     */
+    public function units(Request $request){
+
+
+        return $this->render('pages/units.html.twig', [
+            'planetCount' => $this->getProfileInfoData()->planetCount,
+            'unitsCount' => $this->getProfileInfoData()->unitsCount,
+        ]);
+
+    }
+
+    private function getDockers(){
+        $dockers = intval($this->get('security.token_storage')->getToken()->getUser()->getLevel()) * 1.3;
+        return floor($dockers);
     }
 
 }

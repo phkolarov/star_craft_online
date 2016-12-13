@@ -16,7 +16,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-collapse-4">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href=""><div class="menu-galactic"></div>Галактика</a></li>
+                    <li><a href="{{ path('galaxies') }}"><div class="menu-galactic"></div>Галактика</a></li>
                     <li><a href=""><div class="menu-planet"></div>Планета </a></li>
                     <li><a href=""><div class="menu-flights"></div>Полети</a></li>
                     <li><a href=""><div class="menu-aliance"></div>Съюз</a></li>
@@ -27,7 +27,7 @@
                             Profile <i class=""></i> </a>
                     </li>
                     <ul class="collapse nav navbar-nav nav-collapse slide-down" role="search" id="nav-collapse4" style="margin-top: 101px; ">
-                        <li class="dropdown" style="float: right; position: absolute; right: 0px; z-index: 10;width: 269px;">
+                        <li class="dropdown" style="float: right; position: absolute; right: 0px; top: 100px; z-index: 10;width: 269px;">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true"  style="background-color: black ">
                                 <p>РАСА: </p>
                                 <h4>{{ app.user.race.name}} МАйкА!</h4>

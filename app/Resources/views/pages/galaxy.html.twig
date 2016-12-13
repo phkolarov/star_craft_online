@@ -5,7 +5,7 @@
 
     {#{{ include('default/login.html.twig') }}#}
 
-    <div class="col-md-8">
+    <div style="width: 53%" class="col-md-6">
         <div class="row">
 
             <div class="col-md-12" id="gameContent">
@@ -16,9 +16,11 @@
                     {% for planet in planets %}
 
                         {% if planet.type == 'sun' %}
-                            <div  style="display: block; left: {{ planet.X }}px; top: {{ planet.Y }}px; position: absolute;">
+                            <div style="display: block; left: {{ planet.X }}px; top: {{ planet.Y }}px; position: absolute;">
                                 <div class="spaceEntityWrapper">
-                                    <img class="sun spaceEntity" style="display: block; margin: 10px; width: 100px; height: 100px; " src="css/images/galaxies/{{ planet.image }}.png">
+                                    <img class="sun spaceEntity"
+                                         style="display: block; margin: 10px; width: 100px; height: 100px; "
+                                         src="css/images/galaxies/{{ planet.image }}.png">
                                     <div class="spaceEntityInformation">
                                         <p>Име: {{ planet.name }}</p>
                                         {#<p>Притежател: пинколе</p>#}
@@ -28,18 +30,20 @@
                                         <p>Минерал: {{ planet.mineral }} </p>
                                         <p>Газ: {{ planet.gas }}</p>
                                         {#{% if true %}#}
-                                            {#<button id="planet-{{ planet.id }}" class="btn btn-sm btn-info entityActionButton">ЗАРЕДИ ПЛАНЕТА</button>#}
+                                        {#<button id="planet-{{ planet.id }}" class="btn btn-sm btn-info entityActionButton">ЗАРЕДИ ПЛАНЕТА</button>#}
                                         {#{% else %}#}
-                                            {#<button id="planet-{{ planet.id }}" class="btn btn0sm btn-danger entityActionButton">АТАКУВАЙ МАЙКА</button>#}
+                                        {#<button id="planet-{{ planet.id }}" class="btn btn0sm btn-danger entityActionButton">АТАКУВАЙ МАЙКА</button>#}
                                         {#{% endif %}#}
                                     </div>
                                 </div>
 
                             </div>
                         {% else %}
-                            <div  style="display: block; left: {{ planet.X }}px; top: {{ planet.Y }}px; position: absolute;">
-                                <div class="spaceEntityWrapper" >
-                                    <img class="sun spaceEntity" style="display: block; margin: 10px; width: 50px; height: 50px; " src="css/images/galaxies/{{ planet.image }}.png">
+                            <div style="display: block; left: {{ planet.X }}px; top: {{ planet.Y }}px; position: absolute;">
+                                <div class="spaceEntityWrapper">
+                                    <img class="sun spaceEntity"
+                                         style="display: block; margin: 10px; width: 50px; height: 50px; "
+                                         src="css/images/galaxies/{{ planet.image }}.png">
                                     <div class="spaceEntityInformation">
                                         <input type="hidden" class="planetId" id="planet-{{ planet.id }}">
                                         <p>Име: {{ planet.name }}</p>
@@ -50,9 +54,13 @@
                                         <p>Минерал: {{ planet.mineral }} </p>
                                         <p>Газ: {{ planet.gas }}</p>
                                         {% if planet.owner != "незаселена" and planet.ownerId == app.user.getId() %}
-                                                <button id="planet-{{ planet.id }}" class="btn btn-sm btn-info entityActionButton">ЗАРЕДИ ПЛАНЕТА</button>
-                                            {% else %}
-                                                <button id="planet-{{ planet.id }}" class="btn btn-sm btn-danger entityActionButton">АТАКУВАЙ</button>
+                                            <a href="{{ path('planet',{'id':planet.id}) }}"  id="planet-{{ planet.id }}" class="btn btn-sm btn-info entityActionButton">
+                                                       ЗАРЕДИ ПЛАНЕТА
+                                            </a>
+                                        {% else %}
+                                            <button id="planet-{{ planet.id }}"
+                                                    class="btn btn-sm btn-danger entityActionButton">АТАКУВАЙ
+                                            </button>
                                         {% endif %}
                                     </div>
                                 </div>
@@ -60,15 +68,12 @@
                             </div>
                             {#<div class="spaceEntity" style="display: block; left: {{ planet.planetX }}px; top: {{ planet.planetY }}px; position: absolute;">#}
                             {#<img class="spaceEntity" style="display: block;  width: 50px; height: 50px;" src="css/images/galaxies/{{ planet.image }}.png">#}
-                                {#<div class="spaceEntityInformation">#}
+                            {#<div class="spaceEntityInformation">#}
 
-                                {#</div>#}
+                            {#</div>#}
                             {#</div>#}
                         {% endif %}
                     {% endfor %}
-
-
-
 
 
                 </div>
@@ -76,6 +81,26 @@
 
         </div>
     </div>
+    <div class="col-md-2">
+        <div id="galaxyInfoMenu">
+            <div class="row">
+                <div class="col-md-12">
 
+                    <h3>ГАЛАКТИКА: {{ galaxyName }}</h3>
+                    <p>Брой планети: {{ planets|length - 1 }}</p>
+                    <p>Брой слънца: 1</p>
+                    <p>Играчи</p>
+                    <ul>
+                        {% for key ,player in players %}
+
+                            <li><a href="game/players/{{ key }}">{{ player }}</a></li>
+
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
 {% endblock %}
