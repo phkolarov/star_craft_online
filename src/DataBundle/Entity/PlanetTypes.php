@@ -35,6 +35,54 @@ class PlanetTypes
      */
     private $typebonuscoefficient = '0.6';
 
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId(int $id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName(string $name)
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return float
+     */
+    public function getTypebonuscoefficient(): float
+    {
+        return $this->typebonuscoefficient;
+    }
+
+    /**
+     * @param float $typebonuscoefficient
+     */
+    public function setTypebonuscoefficient(float $typebonuscoefficient)
+    {
+        $this->typebonuscoefficient = $typebonuscoefficient;
+    }
+
 
 }
 

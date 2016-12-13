@@ -11,6 +11,9 @@ namespace AppBundle\Controller;
 
 use DataBundle\Entity\Galaxies;
 use DataBundle\Entity\GalaxiesPlanets;
+use DataBundle\Entity\Galaxy;
+use DataBundle\Entity\GalaxyPlanet;
+use DataBundle\Entity\Planet;
 use DataBundle\Entity\Planets;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -32,7 +35,7 @@ class DataGeneratorController extends Controller
         foreach ($galaxies as $galaxy) {
             //var_dump($galaxy['galaxyPlanets']);
 
-            $newGalaxy = new Galaxies();
+            $newGalaxy = new Galaxy();
             $newGalaxy->setName($galaxy['galaxyName']);
             $newGalaxy->setGuidid($galaxy['galaxyId']);
 
@@ -40,11 +43,12 @@ class DataGeneratorController extends Controller
             $em = $this->getDoctrine()->getManager();
 
             $em->persist($newGalaxy);
-            $em->flush();
+            //$em->flush();
 
+            var_dump($galaxy);
             foreach ($galaxy['galaxyPlanets'] as $planet) {
 
-                $newPlanet = new Planets();
+                $newPlanet = new Planet();
                 $newPlanet->setName($planet['name']);
                 $newPlanet->setX($planet['x']);
                 $newPlanet->setY($planet['y']);
@@ -57,13 +61,13 @@ class DataGeneratorController extends Controller
                 $newPlanet->setImageUri($planet['image']);
 
                 $em->persist($newPlanet);
-                $em->flush();
+                //$em->flush();
 
-                $galaxyPlanet = new GalaxiesPlanets();
-                $galaxyPlanet->setGalaxyid($newGalaxy);
-                $galaxyPlanet->setPlanetid($newPlanet);
+                $galaxyPlanet = new GalaxyPlanet();
+                $galaxyPlanet->setGalaxy($newGalaxy);
+                $galaxyPlanet->setPlanet($newPlanet);
                 $em->persist($galaxyPlanet);
-                $em->flush();
+                //$em->flush();
             }
 
         }
@@ -85,7 +89,7 @@ class DataGeneratorController extends Controller
 
     function radiator($rad, $pPositionX, $pPositionY, $radius): array
     {
-        $chance = 30;
+        $chance = 33;
         $p = array();
 
 
@@ -131,59 +135,59 @@ class DataGeneratorController extends Controller
             $galaxy['galaxyPlanets'][] = array('name' => $sunName, 'x' => $centerX, 'y' => $centerY, 'type' => 4, 'image' => 'sun', 'planetResources' => $planetResources);
 
 
-            while ($radiusDegrees < 1000) {
-
-                for ($r = 0; $r < 360; $r += 50) {
-                    $p1 = $this->radiator($r, $centerX, $centerY, $radiusDegrees);
-
-                    if (count($p1) > 0) {
-                        $planetName = substr(str_shuffle(str_repeat("ABCDEFGHIJKLMNOPQRSTUVWXYZ", 5)), 0, 3) . rand(20, 2000) . '-PLN';
-                        $planetType = rand(1, 3);
-                        $image = '';
-                        $planetResources = array();
-                        switch ($planetType) {
-                            case 1:
-
-                                $metal = rand(10000, 20000);
-                                $mineral = rand(50000, 80000);
-                                $gas = rand(10000, 20000);
-
-                                $planetResources['metal'] = $metal;
-                                $planetResources['mineral'] = $mineral;
-                                $planetResources['gas'] = $gas;
-                                $image = 'mineral';
-                                break;
-                            case 2:
-
-                                $metal = rand(50000, 80000);
-                                $mineral = rand(20000, 20000);
-                                $gas = rand(10000, 20000);
-
-                                $planetResources['metal'] = $metal;
-                                $planetResources['mineral'] = $mineral;
-                                $planetResources['gas'] = $gas;
-                                $image = 'metal';
-
-                                break;
-                            case 3:
-
-                                $metal = rand(10000, 20000);
-                                $mineral = rand(20000, 20000);
-                                $gas = rand(50000, 80000);
-                                $planetResources['metal'] = $metal;
-                                $planetResources['mineral'] = $mineral;
-                                $planetResources['gas'] = $gas;
-                                $image = 'gas';
-
-                                break;
-                        }
-                        $galaxy['galaxyPlanets'][] = array('name' => $planetName, 'x' => $p1['x'], 'y' => $p1['y'], 'type' => $planetType, 'image' => $image, 'planetResources' => $planetResources);
-                    }
-                    // echo '<div id="dot1" style="position: absolute; width: 10px; height: 10px; border: 1px solid black; top:' . $p1['y'] . 'px; left: ' . $p1['x'] . 'px"></div>';
-                }
-
-                $radiusDegrees += $radiusDegrees * 1.5;
-            }
+//            while ($radiusDegrees < 500) {
+//
+//                    for ($r = 0; $r < 360; $r += 50) {
+//                        $p1 = $this->radiator($r, $centerX, $centerY, $radiusDegrees);
+//
+//                        if (count($p1) > 0) {
+//                            $planetName = substr(str_shuffle(str_repeat("ABCDEFGHIJKLMNOPQRSTUVWXYZ", 5)), 0, 3) . rand(20, 2000) . '-PLN';
+//                            $planetType = rand(1, 3);
+//                            $image = '';
+//                            $planetResources = array();
+//                            switch ($planetType) {
+//                                case 1:
+//
+//                                    $metal = rand(10000, 20000);
+//                                    $mineral = rand(50000, 80000);
+//                                    $gas = rand(10000, 20000);
+//
+//                                    $planetResources['metal'] = $metal;
+//                                    $planetResources['mineral'] = $mineral;
+//                                    $planetResources['gas'] = $gas;
+//                                    $image = 'mineral';
+//                                    break;
+//                                case 2:
+//
+//                                    $metal = rand(50000, 80000);
+//                                    $mineral = rand(20000, 20000);
+//                                    $gas = rand(10000, 20000);
+//
+//                                    $planetResources['metal'] = $metal;
+//                                    $planetResources['mineral'] = $mineral;
+//                                    $planetResources['gas'] = $gas;
+//                                    $image = 'metal';
+//
+//                                    break;
+//                                case 3:
+//
+//                                    $metal = rand(10000, 20000);
+//                                    $mineral = rand(20000, 20000);
+//                                    $gas = rand(50000, 80000);
+//                                    $planetResources['metal'] = $metal;
+//                                    $planetResources['mineral'] = $mineral;
+//                                    $planetResources['gas'] = $gas;
+//                                    $image = 'gas';
+//
+//                                    break;
+//                            }
+//                            $galaxy['galaxyPlanets'][] = array('name' => $planetName, 'x' => $p1['x'], 'y' => $p1['y'], 'type' => $planetType, 'image' => $image, 'planetResources' => $planetResources);
+//                        }
+//                        // echo '<div id="dot1" style="position: absolute; width: 10px; height: 10px; border: 1px solid black; top:' . $p1['y'] . 'px; left: ' . $p1['x'] . 'px"></div>';
+//                    }
+//
+//                $radiusDegrees += $radiusDegrees * 1.5;
+//            }
             $degrees = 150;
             $galaxyContainer[] = $galaxy;
         }

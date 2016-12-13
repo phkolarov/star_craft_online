@@ -584,3 +584,37 @@ thead {
 .pagination a:hover{
     color: #538cff;
 }
+#galaxyWrapper{
+    border: 5px solid #4b5a98;
+    width: 1000px;
+    height: 1000px;
+}
+.spaceEntity.sun:hover{
+    border: 1px solid white;
+    border-radius: 60px;
+}
+.spaceEntityWrapper{
+    position: relative;
+    padding: 5px;
+}
+.spaceEntityInformation{
+    position: absolute;
+    display: none;
+    width: 150px;
+    left: 49px;
+    top: 70px;
+    z-index: 10;
+    border: 2px solid #538cff;
+    padding-left: 5px;
+    background-color: rgba(255, 255, 255, 0.79);
+}
+.spaceEntityWrapper:hover>.spaceEntityInformation{
+    display: block;
+}
+.spaceEntity:hover{
+    border: 1px solid white;
+    border-radius: 25px;
+}
+.entityActionButton{
+    margin-bottom: 10px;
+}

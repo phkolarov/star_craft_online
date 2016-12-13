@@ -35,6 +35,55 @@ class Galaxy
      */
     private $guidid;
 
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId(int $id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName(string $name)
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return string
+     */
+    public function getGuidid(): string
+    {
+        return $this->guidid;
+    }
+
+    /**
+     * @param string $guidid
+     */
+    public function setGuidid(string $guidid)
+    {
+        $this->guidid = $guidid;
+    }
+
+
 
 }
 

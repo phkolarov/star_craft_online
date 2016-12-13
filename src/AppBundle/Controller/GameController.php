@@ -98,10 +98,30 @@ class GameController extends Controller
         $galaxy = $em->getRepository('DataBundle:Galaxy')->find($galaxyId);
         $planetsOfGalaxy = $em->getRepository('DataBundle:GalaxyPlanet')->findBy(array('galaxy'=>$galaxy));
 
-        var_dump($planetsOfGalaxy);
-//        $planets = $em->getRepository('DataBundle:GalaxiesPlanets')->findBy(array('Galaxy' => 20));
+        $planets = [];
+        foreach ($planetsOfGalaxy as $planet) {
 
+            $planets[] = array(
+                'id'=> $planet->getPlanet()->getId(),
+                'name'=> $planet->getPlanet()->getName(),
+                'owner'=> $planet->getPlanet()->getOwner() != null ? $planet->getPlanet()->getOwner()->getUsername(): 'незаселена',
+                'ownerId'=> $planet->getPlanet()->getOwner() != null ? $planet->getPlanet()->getOwner()->getId(): '-1',
+                'X'=> $planet->getPlanet()->getX(),
+                'Y'=> $planet->getPlanet()->getY(),
+                'type'=>$planet->getPlanet()->getType()->getName(),
+                'metal'=>$planet->getPlanet()->getMetal(),
+                'mineral'=>$planet->getPlanet()->getMineral(),
+                'gas'=>$planet->getPlanet()->getGas(),
+                'image'=>$planet->getPlanet()->getImageUri(),
+            );
+        }
 
+        return $this->render('pages/galaxy.html.twig',[
+            'planetCount' => $this->getProfileInfoData()->planetCount,
+            'unitsCount' => $this->getProfileInfoData()->unitsCount,
+            'galaxyName' => $galaxtName,
+            'planets'=>$planets
+        ]);
 
     }
 
