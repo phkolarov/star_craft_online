@@ -51,5 +51,70 @@ class Resources
         $this->player = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId(int $id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName(string $name)
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getArmy(): \Doctrine\Common\Collections\Collection
+    {
+        return $this->army;
+    }
+
+    /**
+     * @param \Doctrine\Common\Collections\Collection $army
+     */
+    public function setArmy(\Doctrine\Common\Collections\Collection $army)
+    {
+        $this->army = $army;
+    }
+
+    /**
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPlayer(): \Doctrine\Common\Collections\Collection
+    {
+        return $this->player;
+    }
+
+    /**
+     * @param \Doctrine\Common\Collections\Collection $player
+     */
+    public function setPlayer(\Doctrine\Common\Collections\Collection $player)
+    {
+        $this->player = $player;
+    }
+
+
 }
 

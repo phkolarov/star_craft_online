@@ -27,8 +27,9 @@
                                     <td>{{ building.getName() }}</td>
                                     <td><img style="width: 60px; height: 60px" src="css/images/buildings/{{ building.getImageUri() }}.jpg"></td>
                                     <td class="td-actions">
+                                        <input type="number" id="building-{{ building.getId()}}" class="buildingEntity" value="1" placeholder="#" min="1" max="5">
                                         <a href="{{ path('galaxy',{'id': building.getId(),'name': building.getName()}) }}"
-                                           class="btn btn-small btn-primary">
+                                           class="btn btn-small btn-primary build-building">
                                             <i class="btn-icon-only icon-ok">ЗАРЕДИ</i>
                                         </a>
                                     </td>
@@ -41,7 +42,7 @@
                         </div>
 
                     </div> <!-- /widget-content -->
-
+                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
                 </div>
             </div>
 

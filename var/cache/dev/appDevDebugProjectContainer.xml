@@ -495,7 +495,7 @@
                   <tag name="cache.pool"/>
                   <argument>gbequfB13j</argument>
                   <argument>0</argument>
-                  <argument>xYLn9I3nxwyId0NovTWTYw</argument>
+                  <argument>nB2z1Wg95MHZhqywRM9SKg</argument>
                   <argument>C:\xampp_1\htdocs\star_craft_online\var\cache\dev/pools</argument>
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -508,7 +508,7 @@
                   <tag name="cache.pool"/>
                   <argument>JHVNQOEaaH</argument>
                   <argument>0</argument>
-                  <argument>xYLn9I3nxwyId0NovTWTYw</argument>
+                  <argument>nB2z1Wg95MHZhqywRM9SKg</argument>
                   <argument>C:\xampp_1\htdocs\star_craft_online\var\cache\dev/pools</argument>
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -840,7 +840,7 @@
       <tag name="cache.pool"/>
       <argument>UK4JR46K0g</argument>
       <argument>0</argument>
-      <argument>xYLn9I3nxwyId0NovTWTYw</argument>
+      <argument>nB2z1Wg95MHZhqywRM9SKg</argument>
       <argument>C:\xampp_1\htdocs\star_craft_online\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -1633,7 +1633,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>584ef5740bc517.44415129</argument>
+            <argument>58513b9ec6e865.27154047</argument>
           </service>
         </argument>
       </argument>
@@ -1830,7 +1830,7 @@
                 <argument type="collection"/>
                 <call method="setOptions">
                   <argument type="collection">
-                    <argument key="login_path">security_login</argument>
+                    <argument key="login_path">home</argument>
                     <argument key="always_use_default_target_path">false</argument>
                     <argument key="default_target_path">/</argument>
                     <argument key="target_path_parameter">_target_path</argument>
@@ -1855,7 +1855,7 @@
                 <argument type="service" id="monolog.logger.security" on-invalid="null"/>
                 <call method="setOptions">
                   <argument type="collection">
-                    <argument key="login_path">security_login</argument>
+                    <argument key="login_path">home</argument>
                     <argument key="failure_path">null</argument>
                     <argument key="failure_forward">false</argument>
                     <argument key="failure_path_parameter">_failure_path</argument>
@@ -1881,7 +1881,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>584ef5740bc517.44415129</argument>
+            <argument>58513b9ec6e865.27154047</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -1918,7 +1918,7 @@
                   <argument type="service" id="router" on-invalid="null"/>
                 </service>
               </argument>
-              <argument>security_login</argument>
+              <argument>home</argument>
               <argument>false</argument>
             </service>
           </argument>

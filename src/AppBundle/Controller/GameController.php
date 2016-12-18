@@ -10,6 +10,8 @@ namespace AppBundle\Controller;
 
 use AppBundle\Form\LoginUserType;
 use DataBundle\Entity\Galaxies;
+use DataBundle\Entity\PlayerResouces;
+use DataBundle\Repository\TaskRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -27,7 +29,8 @@ class GameController extends Controller
     {
         return $this->render('pages/game.html.twig', [
             'planetCount' => $this->getProfileInfoData()->planetCount,
-            'unitsCount' => $this->getProfileInfoData()->unitsCount
+            'unitsCount' => $this->getProfileInfoData()->unitsCount,
+            'userResources' => $this->getProfileInfoData()->userResources,
         ]);
     }
 
@@ -53,6 +56,7 @@ class GameController extends Controller
         return $this->render('pages/galaxies.html.twig', [
             'planetCount' => $this->getProfileInfoData()->planetCount,
             'unitsCount' => $this->getProfileInfoData()->unitsCount,
+            'userResources' => $this->getProfileInfoData()->userResources,
             'galaxies' => $galaxies
         ]);
     }
@@ -79,6 +83,7 @@ class GameController extends Controller
         return $this->render('pages/player-galaxies.html.twig', [
             'planetCount' => $this->getProfileInfoData()->planetCount,
             'unitsCount' => $this->getProfileInfoData()->unitsCount,
+            'userResources' => $this->getProfileInfoData()->userResources,
             'galaxies' => $galaxies
         ]);
 
@@ -132,6 +137,7 @@ class GameController extends Controller
         return $this->render('pages/galaxy.html.twig', [
             'planetCount' => $this->getProfileInfoData()->planetCount,
             'unitsCount' => $this->getProfileInfoData()->unitsCount,
+            'userResources' => $this->getProfileInfoData()->userResources,
             'galaxyName' => $galaxtName,
             'planets' => $planets,
             'players' => $players
@@ -158,6 +164,7 @@ class GameController extends Controller
             return $this->render('/pages/planet.html.twig',[
                 'planetCount' => $this->getProfileInfoData()->planetCount,
                 'unitsCount' => $this->getProfileInfoData()->unitsCount,
+                'userResources' => $this->getProfileInfoData()->userResources,
                 'planetName'=> $currentPlanet->getName(),
                 'metal'=> $currentPlanet->getMetal(),
                 'mineral'=> $currentPlanet->GetMineral(),
@@ -189,23 +196,13 @@ class GameController extends Controller
         return $this->render('pages/pagination.html.twig', array('pagination' => $pagination));
     }
 
-    private function getProfileInfoData()
-    {
-        $em = $this->getDoctrine()->getManager();
-        $user = $this->get('security.token_storage')->getToken()->getUser();
-        $planetCount = count($em->getRepository('DataBundle:PlanetPlayers')->findBy(['player' => $user->getId()]));
-        $unitsCount = count($em->getRepository('DataBundle:PlayerUnits')->findBy(['playerid' => $user->getId()]));
-
-        return (object)array(
-            'planetCount' => $planetCount,
-            'unitsCount' => $unitsCount
-        );
-    }
 
     /**
      * @Route("game/buildings", name="buildings")
      */
     public function buildings(Request $request){
+
+        $player= $this->get('security.token_storage')->getToken()->getUser();
 
         $em = $this->get('doctrine.orm.entity_manager');
         $dql = "SELECT a FROM DataBundle:Buildings a";
@@ -218,9 +215,11 @@ class GameController extends Controller
             12/*limit per page*/
         );
 
+
         return $this->render('pages/buildings.html.twig', [
             'planetCount' => $this->getProfileInfoData()->planetCount,
             'unitsCount' => $this->getProfileInfoData()->unitsCount,
+            'userResources' => $this->getProfileInfoData()->userResources,
             'buildings' => $buildings
         ]);
     }
@@ -236,6 +235,43 @@ class GameController extends Controller
             'unitsCount' => $this->getProfileInfoData()->unitsCount,
         ]);
 
+    }
+
+    /**
+     * @Route("game/buildingTasks", name="buildingTasks")
+     */
+    public function buildingTasks(){
+
+        $em = $this->getDoctrine()->getManager();
+        $user = $this->get('security.token_storage')->getToken()->getUser();
+        $userTasks = $em->getRepository('DataBundle:BuildingTask')->getTask($user);
+
+
+        return $this->json($userTasks);
+    }
+
+
+    private function getProfileInfoData()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $user = $this->get('security.token_storage')->getToken()->getUser();
+        $planetCount = count($em->getRepository('DataBundle:PlanetPlayers')->findBy(['player' => $user->getId()]));
+        $unitsCount = count($em->getRepository('DataBundle:PlayerUnits')->findBy(['playerid' => $user->getId()]));
+
+        $resources = $em->getRepository('DataBundle:PlayerResources')->findByPlayer($user);
+        $outputResourceArray = [];
+        foreach ($resources as $resource) {
+            $outputResourceArray[] = array(
+                'name'=> ($resource->getResource()->getName()),
+                'amount' => $resource->getAmount()
+            );
+        }
+
+        return (object)array(
+            'planetCount' => $planetCount,
+            'unitsCount' => $unitsCount,
+            'userResources' => $outputResourceArray,
+        );
     }
 
     private function getDockers(){

@@ -10,12 +10,19 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Brand</a>
+                <a class="navbar-brand" href="#" style="padding: 0px"><img src="css/images/logo-sm.png" style="width: 250px"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-collapse-4">
                 <ul class="nav navbar-nav navbar-right">
+                    <li><a href=""><div class="menu-resources"><p>Ресурси:</p>
+                            {% for res in userResources%}
+                                <span>{{ res.name }}:</span> <span id="{{ res.name }}"> {{ res.amount }}</span>
+                            {% endfor %}
+                            </div>
+                        </a>
+                    </li>
                     <li><a href="{{ path('galaxies') }}"><div class="menu-galactic"></div>Галактика</a></li>
                     <li><a href=""><div class="menu-planet"></div>Планета </a></li>
                     <li><a href=""><div class="menu-flights"></div>Полети</a></li>

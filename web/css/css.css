@@ -654,3 +654,11 @@ thead {
     list-style-type: none;
     padding-left: 10px;
 }
+.buildingEntity{
+    width: 50px;
+    color: black;
+}
+#menu-recources{
+    padding-top: 15px;
+    font-size: 16px;
+}

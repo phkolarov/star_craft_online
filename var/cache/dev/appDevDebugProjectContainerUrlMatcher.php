@@ -150,6 +150,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     return array (  '_controller' => 'AppBundle\\Controller\\GameController::units',  '_route' => 'units',);
                 }
 
+                // buildingTasks
+                if ($pathinfo === '/game/buildingTasks') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\GameController::buildingTasks',  '_route' => 'buildingTasks',);
+                }
+
             }
 
         }
